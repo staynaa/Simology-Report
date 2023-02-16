@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+/*body{
+    background: rgb(255,255,255);
+    background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(236,232,252,1) 42%, rgba(127,145,233,1) 100%);
+}*/
+.navbar{
+    list-style: none;
+    
+}
+.navbar a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Lexend', sans-serif;
+}
+#right{
+    float: right;
+}
