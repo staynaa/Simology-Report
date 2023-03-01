@@ -12,6 +12,4 @@ we want to check the answer chosen:
     *2) check what traits are linked to the answer, 
     look for the traits weight and add that to the trait's value.
     *3) look for conflict, decrement that traits value
-
-
 */

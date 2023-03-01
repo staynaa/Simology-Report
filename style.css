@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
-/*body{
-    background: rgb(255,255,255);
-    background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(236,232,252,1) 42%, rgba(127,145,233,1) 100%);
-}*/
-.navbar{
-    list-style: none;
+/*mobile first  max:  430      */
+@media only screen and (max-width: 430px){
+    body{
+        background-image: url("bgmobile.png");
+        background-size: 100%;
+    }
+}
+
+/*low res tablet        min:        max:        */
+
+
+/*high res tablet        min:        max:        */
+
+/*desktop       min:        */
+@media only screen and (min-width: 1280px){
     
-}
-.navbar a{
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Lexend', sans-serif;
-}
-#right{
-    float: right;
 }
