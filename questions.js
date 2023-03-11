@@ -1,458 +1,462 @@
-/*
-question
-answer
-answer asp (aspiration) IF APPLICABLE
-answer trait (trait +1-3)
-answer conflict (trait -1)
-
-    "question":"It's Halloween, what are you dressing as?",
+/*format:
+{"question":"",
+        "questionID":0000,
+        "pack":"Base Game",
         "answer1":{
             "answer":"",
             "aspiration":"",
             "traits":{
                 "trait":{
-                    "trait-type":1
+                    "inputtrait":1
                 },
-                "conflicts":["trait-type","trait-type"]
-            }
-        }
+                "conflicts":[""]
+            },
+            "job":"",
+            "likes":{
+                "inputlikes":1
+            },
+            "dislikes":{
+                "inputdislike":1
+            },
+            "style":""
+        },
+    }
 */
-const BaseGameQs =
+const Qs =
     [
         {
             "question": "It's Halloween, what are you dressing as?",
+            "pack": "Base Game",
+            "questionID": 1,
             "answer1": {
-                "answer": "A cheerleader",
+                "answer": "A cheerloeader",
                 "aspiration": "Bodybuilder",
                 "traits": {
                     "trait": {
-                        "cheerful": 1
+                        "Cheerful": 1
                     },
-                    "conflicts": ["gloomy", "hot-headed"]
-                }
+                    "conflicts": ["Gloomy", "Hot-headed"]
+                },
+                "job": "Athlete",
+                "likes": {
+                    "object": 1
+                },
+                "dislikes": {
+                    "object": 1
+                },
+                "style": "Athletic-wear"
             },
             "answer2": {
-                "answer": "An alien",
+                "answer": "Favorite cartoon or video game character",
+                //"aspiration":"",
                 "traits": {
                     "trait": {
-                        "erratic": 1,
                         "geek": 1
                     }
-                }
+                    //"conflicts":[""]
+                },
+                "job": "Tech Guru",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+                "style": "Nerdy"
             },
             "answer3": {
-                "answer": "Favorite cartoon or video game character",
-                "traits": {
-                    "trait": {
-                        "geek": 3
-                    }
-                }
-            },
-            "answer4": {
                 "answer": "Clown",
                 "aspiration": "Joke Star",
                 "traits": {
                     "trait": {
-                        "erratic": 1,
-                        "goofball": 2,
+                        "Goofball": 2, "Childish": 1
                     },
-                    "conflicts": ["snob"]
+                    "conflicts": ["Snob", "Evil", "Hates Children"]
+                },
+                "job": "",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
                 }
-            }
-        },//end of question 1
+            },
+            "answer4": {
+                "answer": "",
+                "aspiration": "",
+                "traits": {
+                    "trait": {
+                        "inputtrait": 1
+                    },
+                    "conflicts": [""]
+                },
+                "job": "",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+                "style": ""
+            },
+        },//end
         {
             "question": "What yearbook superlative do you fit?",
-            //answers
+            "pack": "Base Game",
+            "questionID": 2,
             "answer1": {
-                "answer": "Class Clown",
+                "answer": "Class clown",
                 "aspiration": "Joke Star",
                 "traits": {
                     "trait": {
-                        "goofball": 3,
-                        "erratic":1
+                        "Goofball": 2
                     },
-                    "conflicts": ["snob"]
-                }
+                    "conflicts": ["Snob"]
+                },
+                "job": "Entertainer",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
             },
             "answer2": {
-                "answer": "Most Likely to Become a Billonaire",
-                "aspiration": "Fabulously Wealthy",
+                "answer": "Most Likely To Become A Billionaire",
+                "aspiration": "Fabolously Wealthy",
                 "traits": {
                     "trait": {
-                        "ambitious": 1
+                        "Ambitious": 2, "Perfectionist": 1,
                     },
-                    "conflicts": ["Lazy"]
-                }
+                    "conflicts": ["Glutton"]
+                },
+                "job": "Business",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
             },
             "answer3": {
-                "answer": "Most Likely to Win a Marathon",
+                "answer": "Most Likely To Win A Marathon",
                 "aspiration": "Bodybuilder",
                 "traits": {
                     "trait": {
-                        "active": 2
+                        "Active": 2
                     },
-                    "conflicts": ["lazy"]
-                }
+                    "conflicts": ["Lazy"]
+                },
+                "job": "Athlete",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+                "style": "Athlete"
             },
             "answer4": {
                 "answer": "Most Talented",
-                "traits": {
-                    "trait": {
-                        "creative": 2
-                    },
-                }
-            }
-        },//end of question 2
-        {
-            "question": "Just got assigned a project due for next week, you...",
-            //answers
-            "answer1": {
-                "answer": "Wait until the last minute, there's enough time",
                 "aspiration": "",
                 "traits": {
                     "trait": {
-                        "lazy": 1
+                        "Creative": 1
                     },
-                    "conflicts": ["trait-type", "trait-type"]
+                    "conflicts": [""]
+                },
+                "job": "Painter",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+                "style": ""
+            },
+        },//end
+        {
+            "question": "It's Valentine's Day, what are your plans?",
+            "pack": "Base Game",
+            "questionID": 3,
+            "answer1": {
+                "answer": "Crying all day with ice cream by my side",
+                "traits": {
+                    "trait": {
+                        "Gloomy": 2
+                    },
+                    "conflicts": ["Cheerful", "Hot-headed"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+            },
+            "answer2": {
+                "answer": "Give my partner flowers and shower them with gifts",
+                "aspiration": "Serial Romantic",
+                "traits": {
+                    "trait": {
+                        "Romantic": 3, "Materialistic": 2
+                    },
+                    "conflicts": ["Unflirty"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+            },
+            "answer3": {
+                "answer": "Cook an extravagant four course meal for my parter",
+                "aspiration": "Master Chef",
+                "traits": {
+                    "trait": {
+                        "Foodie": 3, "Good": 1
+                    },
+                    "conflicts": ["Glutton", "Evil", "Kleptomaniac", "Mean"]
+                },
+                "job": "Culinary Chef",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+            },
+            "answer4": {
+                "answer": "Just a regular day for me...",
+                "traits": {
+                    "trait": {
+                        "Loner": 2, "Noncommittal": 2
+                    },
+                    "conflicts": ["Outgoing, Family-oriented, Loyal, Insider"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+            },
+        },
+        {
+            "question": "While in a packed elevator, you accidentally let a fart out, so you...",
+            "questionID": 4,
+            "answer1": {
+                "answer": "Make a joke out of the moment. Not a big deal",
+                "traits": {
+                    "trait": {
+                        "Self-assured": 3, "Clumsy": 2, "Slob": 2
+                    },
+                    "conflicts": ["Neat"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
                 }
             },
             "answer2": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "Pray that the Earth Swallows you whole",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Perfectionist": 2, "Neat": 2,
                     },
-                    "conflicts": ["trait-type", "trait-type"]
+                    "conflicts": ["Lazy", "Slob"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
                 }
             },
             "answer3": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "Lie and put the blame on the person next to you",
+                "aspiration": "Chief of Mischief",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Slob": 1, "Mean": 2
                     },
-                    "conflicts": ["trait-type", "trait-type"]
+                    "conflicts": ["Neat", "Good"]
+                },
+                "job": "Crimminal",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
                 }
             },
             "answer4": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "Fart again and watch the rest suffer",
+                "aspiration": "Public Enemy",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Slob": 2, "Evil": 5, "Erratic": 2
                     },
-                    "conflicts": ["trait-type", "trait-type"]
+                    "conflicts": ["Neat", "Childish", "Good"]
+                },
+                "job": "Viilain",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
                 }
-            }
-        },//end of question
+            },
+        },
         {
-            "question": "",
-            //answers
+            "question": "What reality show would you be a contestant on?",
+            "pack": "Base Game",
+            "questionID": 5,
             "answer1": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "The Bachelor/Bachelorette",
+                "aspiration": "Soulmate",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Romantic": 3, "Outgoing": 2
                     },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+                    "conflicts": ["Loner"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
+                "style": ""
             },
             "answer2": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "Hell's Kitchen",
+                "aspiration": "Master Chef",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Self-assured": 2, "Perfectionist": 3, "Foodie": 4,
                     },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+                    "conflicts": ["Glutton"]
+                },
+                "job": "Chef",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
             },
             "answer3": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "The Challenge",
+                "aspiration": "Bodybuilder",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Active": 3
                     },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+                    "conflicts": ["Active"]
+                },
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
             },
             "answer4": {
-                "answer": "",
-                "aspiration": "",
+                "answer": "Jersey Shore",
+                "aspiration": "Party Animal",
                 "traits": {
                     "trait": {
-                        "trait-type": 1
+                        "Erratic": 2, "Bro": 2, "Outgoing": 3
                     },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+                    "conflicts": ["Loner"]
+                },
+                "job": "Entertainer",
+                "likes": {
+                    "inputlikes": 1
+                },
+                "dislikes": {
+                    "inputdislike": 1
+                },
             },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+        },
+        {"question":"Today is career day at school, what are you most excited for",
+        "questionID":6,
+        "pack":"Get To Work",
+        "answer1":{
+            "answer":"Meeting the doctors and learning about working in the medical field",
+            "aspiration":"",
+            "traits":{
+                "trait":{
+                    "inputtrait":1
+                },
+                "conflicts":[""]
             },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "job":"Doctor",
+            "likes":{
+                "inputlikes":1
             },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "dislikes":{
+                "inputdislike":1
             },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "style":""
+        },
+        "answer2":{
+            "answer":"Anything and everything computers",
+            "aspiration":"",
+            "traits":{
+                "trait":{
+                    "Geek":3
+                },
+                "conflicts":[""]
             },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "job":"",
+            "likes":{
+                "inputlikes":1
             },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "dislikes":{
+                "inputdislike":1
             },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "style":""
+        },
+        "answer3":{
+            "answer":"Always wanted to know more about the music industry",
+            "aspiration":"",
+            "traits":{
+                "trait":{
+                    "inputtrait":1
+                },
+                "conflicts":[""]
             },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "job":"",
+            "likes":{
+                "inputlikes":1
             },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "dislikes":{
+                "inputdislike":1
             },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "style":""
+        },
+        "answer4":{
+            "answer":"Learning about solving crimes from real detectives",
+            "aspiration":"",
+            "traits":{
+                "trait":{
+                    "inputtrait":1
+                },
+                "conflicts":[""]
             },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "job":"",
+            "likes":{
+                "inputlikes":1
             },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
+            "dislikes":{
+                "inputdislike":1
             },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
-        {
-            "question": "",
-            //answers
-            "answer1": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            },
-            "answer2": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            },
-            "answer3": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            },
-            "answer4": {
-                "answer": "",
-                "aspiration": "",
-                "traits": {
-                    "trait": {
-                        "trait-type": 1
-                    },
-                    "conflicts": ["trait-type", "trait-type"]
-                }
-            }
-        },//end of question
+            "style":""
+        }
+    }
     ]
