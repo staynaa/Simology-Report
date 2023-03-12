@@ -29,7 +29,7 @@ const Qs =
             "pack": "Base Game",
             "questionID": 1,
             "answer1": {
-                "answer": "A cheerloeader",
+                "answer": "A cheerleader",
                 "aspiration": "Bodybuilder",
                 "traits": {
                     "trait": {
@@ -82,7 +82,7 @@ const Qs =
                 }
             },
             "answer4": {
-                "answer": "",
+                "answer": "An alien",
                 "aspiration": "",
                 "traits": {
                     "trait": {
@@ -245,6 +245,7 @@ const Qs =
         },
         {
             "question": "While in a packed elevator, you accidentally let a fart out, so you...",
+            "pack":"Base Game",
             "questionID": 4,
             "answer1": {
                 "answer": "Make a joke out of the moment. Not a big deal",

@@ -7,6 +7,7 @@
     <title>Quiz</title>
 </head>
 <body>
+    <div id="gettingPacks">
         <h4>What Packs Do You Own?</h4>
         <input type="checkbox" class="packs" id="gtw" value="Get To Work">
         <label for="gtw">Get To Work</label>
@@ -17,7 +18,10 @@
         <input type="checkbox" class="packs" id="vamp" value="Vampires">
         <label for="vamp">Vampires</label><br><br>
 
-        <input type="submit" value="Submit" onclick="getPacks()">
+        <input type="submit" value="Start Questionaire" onclick="getPacks()"><br><br>
+    </div>
+        <div class="quizContainer" style="border: 2px black;"></div>
+        <input style="display:none;" id="next" type="button" value="Skip" onclick="displayQandAs()">
 </body>
 <!-- JAVASCRIPT FILES -->
 <script src="questions.js"></script>
