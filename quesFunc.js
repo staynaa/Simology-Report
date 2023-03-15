@@ -1,6 +1,9 @@
-const qTotal = Qs.length; //json questions
-const quizdiv = document.querySelector('.quizContainer');
-
+//variables used in this script
+const qTotal = Qs.length; //json questions from questions.js
+const quizdiv = document.querySelector('.quizContainer'); //where quiz questions ans answer will display
+const next = document.getElementById("nextbtn"); //next button
+var qsAnswered = 0;//amount of questions answered, only 20 questions should be answered
+var globalIdx;
 
 ///*DEBUG*/ console.log("Total Questions:" + qTotal);
 const questions = new Array(qTotal);
@@ -84,6 +87,7 @@ function checkAsked(x) {
     }
 }
 function displayQandAs() {
+    if (next.style.display === "block") next.style.display = "none"; //make sure next isn't visible when a question is asked
     var rand = getRand(); //random index
     var askAlready = checkAsked(rand);
     while (askAlready) { //while true
@@ -94,6 +98,7 @@ function displayQandAs() {
     if (!askAlready) { //if false
         console.log("random value= " + rand)
         let idx = rand - 1;
+        globalIdx = idx; //store globally
         print(idx);//send idx to function that'll display in html
         console.log("random index userQs= " + idx);
         console.log(Qs[idx].question)
@@ -107,26 +112,66 @@ function displayQandAs() {
 }
 //showing and hiding the divs of the question...
 const packquest = document.getElementById("gettingPacks");
-const nextQ = document.getElementById("next");
-function hidePackQuestion() {
-    packquest.style.display = "none"; //
-    nextQ.style.display = "block";
+const skipQ = document.getElementById("skip");
+function hidePackQuestion() { //hides the what pack you have question
+    packquest.style.display = "none"; //hides
+    skipQ.style.display = "block"; //shows the skip button for quiz
 }
-function print(idx) {
+
+function showNextBtn() { //when an answer is selected, next button will display
+    next.style.display = "block";
+}
+var choices = document.getElementsByName("ansCh");
+var chosen;//users answered choice they submit
+function evalAnswer(index) { //this is where answers are calculated to put points at the right spot
+    for (var i = 0; i < choices.length; i++) {
+        if (choices[i].checked) {
+            //console.log(choices[i].value);
+            chosen = choices[i].value;
+            if (chosen === "answer1") {
+                console.log(Qs[index].answer1.answer + " <--Was Chosen")
+            } else if (chosen === "answer2") {
+                console.log(Qs[index].answer2.answer + " <--Was Chosen")
+            } else if (chosen === "answer3") {
+                console.log(Qs[index].answer3.answer + " <--Was Chosen")
+            } else if (chosen === "answer4") {
+                console.log(Qs[index].answer4.answer + " <--Was Chosen")
+            }
+        }
+    }
+    //console.log(chosen);
+    qsAnswered++;//increment and call display for new question
+    console.log(qsAnswered + "<--- questions answered")
+    if (qsAnswered < userQs.length) displayQandAs();
+    else {
+        console.log("Quiz Done");
+        quizdiv.innerHTML = `<h1>Quiz Done</h1>`
+        next.style.display="none";
+        skipQ.style.display="none";
+    }
+}
+//showing and hiding next button when an option is selected
+
+function print(idx) { //display quiz with questions and answers in html
     quizdiv.innerHTML = `
 <h4>${Qs[idx].question}</h4>
 <form id="ans">
-    <input type="radio" id="ans1">
+    <input type="radio" id="ans1" name="ansCh" onclick="showNextBtn()" value="answer1">
     <label for="ans1">${Qs[idx].answer1.answer}</label><br><br>
 
-    <input type="radio" id="ans2">
-    <label for="ans1">${Qs[idx].answer2.answer}</label><br><br>
+    <input type="radio" id="ans2" name="ansCh" onclick="showNextBtn()" value= "answer2">
+    <label for="ans2">${Qs[idx].answer2.answer}</label><br><br>
 
-    <input type="radio" id="ans3">
-    <label for="ans1">${Qs[idx].answer3.answer}</label><br><br>
+    <input type="radio" id="ans3" name="ansCh" onclick="showNextBtn()" value= "answer3">
+    <label for="ans3">${Qs[idx].answer3.answer}</label><br><br>
 
-    <input type="radio" id="ans4">
-    <label for="ans1">${Qs[idx].answer4.answer}</label><br><br>
+    <input type="radio" id="ans4" name="ansCh" onclick="showNextBtn()" value= "answer4">
+    <label for="ans4">${Qs[idx].answer4.answer}</label><br><br>
 </form>
 `
 }
+function pressNext() {
+    evalAnswer(globalIdx);
+}
+//todo, fix check to also check if a question has already been answered
+// completely remove it from the array if so.
