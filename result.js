@@ -16,11 +16,21 @@ function addAsp(aspval) {
     asp.set(aspval, curval + 1);
     debugAsp();
 }
-function addTraits(){
-    
+function addTraits(trtKey,trtVal){ //adds trait values.
+    curval = traits.get(trtKey)
+    traits.set(trtKey,(curval+trtVal));
+    debugTrt();
+}
+function subtractConflicts(){ //looks at the associated conflicts of the traits and subtracts 1 from them.
+
 }
 function debugAsp() {
     for (const [key, value] of asp) {
+        console.log(key + ' = ' + value);
+    }
+}
+function debugTrt() {
+    for (const [key, value] of traits) {
         console.log(key + ' = ' + value);
     }
 }

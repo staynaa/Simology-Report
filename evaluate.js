@@ -17,6 +17,7 @@ function evaluate(choice, index) {
         for(var i=0;i<trt.length;i++){
             console.log("Trait "+(i+1)+"----> "+trt[i]);
             console.log("Trait Value "+(i+1)+"----> "+trtVal[i]);
+            addTraits(trt[i],trtVal[i]);//send current key and value 
         }
     }
     else console.log("no aspiration present for this answer");
