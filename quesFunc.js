@@ -1,37 +1,37 @@
 //variables used in this script
-const qTotal = Qs.length; //json questions from questions.js
+const qTotal = Qs.length; //size json questions from questions.js
 const quizdiv = document.querySelector('.quizContainer'); //where quiz questions ans answer will display
 const next = document.getElementById("nextbtn"); //next button
-var qsAnswered = 0;//amount of questions answered, only 20 questions should be answered
-var globalIdx;
+const skip = document.getElementById("skipbtn");//skip button 
 
-///*DEBUG*/ console.log("Total Questions:" + qTotal);
-const questions = new Array(qTotal);
-for (var i = 0; i < questions.length; i++) {
-    questions[i] = i + 1;
-}
-/*DEBUG TO SEE THE QUESTION ARRAY ELEMENTS
-for (var i = 0; i < questions.length; i++) {
-    console.log(questions[i]); //debug
-}*/
+var amountAnswered = 0;//amount of questions answered, only 20 questions should be answered
+const max = 20;//max amount of questions that the user can answer (getMax)
+var glbIdx;
+
+//console.log(Qs[0].answer1.traits.trait[0]);
+// var kys=Object.keys(Qs[0].answer1.traits.trait)
+// console.log(kys[0]);
 
 //FUNCTION-> ask what packs does the user have, and put them in an array
 var owned = ["Base Game"]; //by default all users have basegame
 function getPacks() {
-    var opt = document.getElementsByClassName('packs');
+    var opt = document.getElementsByClassName('packs'); //stores the elements of checkbox form 
     var index = 1;//instead of using i for owned, we use index so that it only increments when owned gets a new element.
     for (var i = 0; i < opt.length; i++) {
         if (opt[i].checked == true) {
             ///*DEBUG*/ console.log("In if statement meaning "+opt[i].value+" is checked");
             owned[index] = opt[i].value;
-            index++;
+            index++; //can now be incremented since an element value was added to the array
         }
     }
-    hidePackQuestion();
-    getUserQs();
+    //after getting all packs... 
+    setKeys(owned);
+    hidePackQuestion(); //hides the check box form
+    getUserQs(); //goesthrough questions in the json, searches and stores all possible questions the user can answer.
 }
-var userQs = []; //questions user can answer
-var asked = []; //questions user already answered
+var userQs = []; //question ids of questions user can answer will be stored here
+var skippedArr = []; //questions user skipped (index is being stored)
+var answeredArr = []; //questions user answered (index is being stored)
 
 /*FUNCTION-> 1) Will go through questions.js Qs elements, 
 2) check if the value in "pack" of the question is in the owned array,
@@ -47,12 +47,12 @@ function getUserQs() {
             }
         }
     }
-    //DEBUG
+    /*//DEBUG
     console.log("total user questions: " + userQs.length)
     for (var j = 0; j < userQs.length; j++) {
         console.log("index: " + j + " value-> " + userQs[j]);
         console.log((j + 1) + ": " + Qs[j].question)
-    }
+    }*/
 
     console.log("--------Now Displaying a question...")
     displayQandAs();
@@ -63,56 +63,84 @@ we use that as an index, which we'll use to get the question id,
 and display it's question
  */
 function getRand() {
-    return Math.floor((Math.random() * userQs.length) + 1); //get random index from 0
+    return Math.floor((Math.random() * userQs.length)); //get random index from 0
 }
-function checkAsked(x) {
-    console.log("Total questions-> " + userQs.length)
-    console.log("Amount of questions asked-> " + asked.length);
-    if (asked.length === 0) { //if empty?
+function checkSkipped(x) {
+    // console.log("Total questions-> " + userQs.length)
+    // console.log("Amount of questions skipped-> " + skippedArr.length);
+    if (skippedArr.length === 0) { //if empty?
         return false;
     }
-    else if (asked.length < userQs.length) { //less than user's question
-        for (var i = 0; i < asked.length; i++) {
-            console.log("random= " + x + " asked element we check= " + asked[i]);
-            if (x === asked[i]) {
+    else if (skippedArr.length < userQs.length) { //less than user's question
+        if (skippedArr.length + answeredArr.length === userQs.length) {
+            // console.log("All possible questions have been asked, starting over...");
+            skippedArr.length = 0; //clears the asked array to now make it empty.
+            return true;
+        }
+        else {
+            for (var i = 0; i < skippedArr.length; i++) {
+                // console.log("random= " + x + " skipped element we check= " + skippedArr[i]);
+                if (x === skippedArr[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    else if (skippedArr.length === userQs.length ||
+        skippedArr.length + answeredArr.length === userQs.length) { // of asked.length is full, has all
+        // console.log("All possible questions have been asked, starting over...");
+        skippedArr.length = 0; //clears the asked array to now make it empty.
+        return true;
+    }
+}
+
+function checkAnswered(x) {
+    //console.log("Total questions-> " + userQs.length)
+    // console.log("Amount of questions answered-> " + answeredArr.length);
+    if (answeredArr.length === 0) { //if empty?
+        return false;
+    }
+    else if (answeredArr.length < userQs.length) { //less than user's question
+        for (var i = 0; i < answeredArr.length; i++) {
+            // console.log("random= " + x + " answered element we check= " + answeredArr[i]);
+            if (x === answeredArr[i]) {
                 return true;
             }
         }
         return false;
     }
-    else if (asked.length === userQs.length) { // of asked.length is full, has all
-        console.log("All possible questions have been asked, starting over...");
-        asked.length = 0; //clears the asked array to now make it empty.
-        return true;
-    }
 }
+
 function displayQandAs() {
     if (next.style.display === "block") next.style.display = "none"; //make sure next isn't visible when a question is asked
     var rand = getRand(); //random index
-    var askAlready = checkAsked(rand);
-    while (askAlready) { //while true
-        console.log("ASKED ALREADY, TRYING AGAIN")
-        var rand = getRand(); //random index
-        var askAlready = checkAsked(rand);
+    debugLog();//debug
+    var skipped = checkSkipped(rand);
+    var answered = checkAnswered(rand);
+    while (skipped || answered) { //atleast one needs to be true
+        // console.log("ASKED ALREADY, TRYING AGAIN")
+        rand = getRand(); //get a different random value for the index again
+        skipped = checkSkipped(rand); //check again
+        answered = checkAnswered(rand); //check again
     }
-    if (!askAlready) { //if false
-        console.log("random value= " + rand)
-        let idx = rand - 1;
-        globalIdx = idx; //store globally
-        print(idx);//send idx to function that'll display in html
-        console.log("random index userQs= " + idx);
-        console.log(Qs[idx].question)
-        console.log("1: " + Qs[idx].answer1.answer)
-        console.log("2: " + Qs[idx].answer2.answer)
-        console.log("3: " + Qs[idx].answer3.answer)
-        console.log("4: " + Qs[idx].answer4.answer)
-        asked.push(rand) //add that to the asked array so it won't be asked again
-        console.log("Amount of questions asked now-> " + asked.length)
+    if (!skipped && !answered) { //if false
+        // console.log("random value= " + rand)
+        glbIdx = rand; //store globally
+        print(glbIdx);//send idx to function that'll display in html
+        // console.log("random index userQs= " + glbIdx);
+        // console.log(Qs[glbIdx].question)
+        // console.log("1: " + Qs[glbIdx].answer1.answer)
+        // console.log("2: " + Qs[glbIdx].answer2.answer)
+        // console.log("3: " + Qs[glbIdx].answer3.answer)
+        // console.log("4: " + Qs[glbIdx].answer4.answer)
+        //asked.push(rand) //add that to the asked array so it won't be asked again
+        //console.log("Amount of questions asked now-> " + asked.length)
     }
 }
 //showing and hiding the divs of the question...
 const packquest = document.getElementById("gettingPacks");
-const skipQ = document.getElementById("skip");
+const skipQ = document.getElementById("skipbtn");
 function hidePackQuestion() { //hides the what pack you have question
     packquest.style.display = "none"; //hides
     skipQ.style.display = "block"; //shows the skip button for quiz
@@ -139,15 +167,17 @@ function evalAnswer(index) { //this is where answers are calculated to put point
             }
         }
     }
+    evaluate(chosen,index);//send in chosen andindex to get values from json and storein map
     //console.log(chosen);
-    qsAnswered++;//increment and call display for new question
-    console.log(qsAnswered + "<--- questions answered")
-    if (qsAnswered < userQs.length) displayQandAs();
+    amountAnswered++;//increment and call display for new question
+    console.log(amountAnswered + "<--- questions answered")
+    if (amountAnswered < userQs.length) displayQandAs();
     else {
         console.log("Quiz Done");
         quizdiv.innerHTML = `<h1>Quiz Done</h1>`
-        next.style.display="none";
-        skipQ.style.display="none";
+        next.style.display = "none";
+        skipQ.style.display = "none";
+        getResults();
     }
 }
 //showing and hiding next button when an option is selected
@@ -171,7 +201,21 @@ function print(idx) { //display quiz with questions and answers in html
 `
 }
 function pressNext() {
-    evalAnswer(globalIdx);
+    answeredArr.push(glbIdx);
+    evalAnswer(glbIdx);
+}
+function pressSkip() {
+    skippedArr.push(glbIdx)
+    displayQandAs();
 }
 //todo, fix check to also check if a question has already been answered
 // completely remove it from the array if so.
+
+function debugLog(){ //for console
+    console.log("Questions: ")
+    console.log(...userQs)
+    console.log("answered: ")
+    console.log(...answeredArr)
+    console.log("skipped: ")
+    console.log(...skippedArr)
+}

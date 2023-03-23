@@ -22,14 +22,17 @@
 
         <input type="submit" value="Start Questionaire" onclick="getPacks()"><br><br>
     </div>
-    <div class="quizContainer" style="border: 2px black;"></div>
+    <div class="quizContainer" style="border: solid 2px black;"></div>
+    <div class="resultContainer" style="border: solid 2px red;"></div>
     <div class="userAction">
-        <input style="display:none;" id="skip" type="button" value="Generate A New Question" onclick="displayQandAs()"><br>
+        <input style="display:none;" id="skipbtn" type="button" value="Generate A New Question" onclick="pressSkip()"><br>
         <input style="display:none;" type="button" id="nextbtn" value="Next" onclick="pressNext()"><br><br>
     </div>
 </body>
 <!-- JAVASCRIPT FILES -->
 <script src="questions.js"></script>
+<script src="result.js"></script>
+<script src="evaluate.js"></script>
 <script src="quesFunc.js"></script>
 
 </html>
