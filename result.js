@@ -3,10 +3,10 @@ var asp = new Map();
 var traits = new Map();
 var likes = new Map();
 var jobs = new Map();
-var species = new Map();
+var occult = new Map();
 var style = new Map();
 var curval;
-var conflictVal=[];
+var conflictVal = [];
 
 var resultAsp;
 var resultTraits = [];
@@ -16,13 +16,18 @@ function addAsp(aspval) {
     asp.set(aspval, curval + 1);
     debugAsp();
 }
-function addTraits(trtKey,trtVal){ //adds trait values.
-    curval = traits.get(trtKey)
-    traits.set(trtKey,(curval+trtVal));
-    debugTrt();
+function addTraits(trtKey, trtVal) { //adds trait values.
+    if (traits.has(trtKey)){
+        curval = traits.get(trtKey)
+        traits.set(trtKey, (curval + trtVal));
+    }
 }
-function subtractConflicts(){ //looks at the associated conflicts of the traits and subtracts 1 from them.
-
+function subtractConflicts(conflictKey) { //looks at the associated conflicts of the traits and subtracts 1 from them.
+    if (traits.has(conflictKey)) {
+        curval = traits.get(conflictKey);
+        traits.set(conflictKey, (curval - 1));
+    }
+    debugTrt();
 }
 function debugAsp() {
     for (const [key, value] of asp) {
@@ -34,7 +39,7 @@ function debugTrt() {
         console.log(key + ' = ' + value);
     }
 }
-
+//put the aspirations,traits,jobs,likes,dislikes, etc in there
 function setKeys(packsOwned) {
     for (var i = 0; i < packsOwned.length; i++) {
         if (packsOwned[i] === "Base Game") {
@@ -105,13 +110,64 @@ function setKeys(packsOwned) {
             traits.set('Mean', 0);
             traits.set('Outgoing', 0);
         }
+        if (packsOwned[i] === "Get To Work"){
+            occult.set("Alien",0);
+        }
+        if (packsOwned[i]=== "Get Together") {//EP
+            asp.set("Leader of The Pack",0);
+            traits.set("Insider",0);
+            traits.set("Dance Machine",0)
+        }
+        if (packsOwned[i]==="City Living"){//EP
+            asp.set("City Native",0);
+            traits.set("Unflirty",0);
+        }
+        if (packsOwned[i]==="Cats & Dogs"){ //EP
+            asp.set("Friend of Animals",0);
+            traits.set("Cat Lover",0);
+            traits.set("Dog Lover",0);
+        }
+        if (packsOwned[i]==="Get Famous"){ //EP
+            asp.set("World-Famous Celebrity",0);
+            asp.set("Master Actor",0);
+            traits.set("Self-absorbed",0);
+        }
+        if (packsOwned[i]==="Island Living"){ //EP
+            asp.set("Beach Life",0);
+            traits.set("Child of the Islands",0);
+            traits.set("Child of the Ocean",0);
+            occult.set("Mermaid",0);
+        }
+        if (packsOwned[i]==="Discover University"){ //EP
+            asp.set("Academic",0);
+        }
+        if (packsOwned[i]==="Eco Lifestyle"){ //EP
+            asp.set("Eco Innovator",0);
+            asp.set("Master Maker",0);
+            traits.set("Freegan",0);
+            traits.set("Green Fiend",0);
+            traits.set("Recycle Disciple",0);
+            traits.set("Maker",0);
+        }
+        if (packsOwned[i]==="Snowy Escape"){ //EP
+            asp.set("Extreme Sports Enthusiast",0);
+            asp.set("Mt.Komorebi Sightseer",0);
+            traits.set("Adventurous",0);
+            traits.set("Proper",0);
+        }
+        if (packsOwned[i]==="Cottage Living"){ //EP
+            asp.set("Country Caretaker",0);
+            traits.set("Animal Enthusiast",0);
+            traits.set("Lactose Intolerant",0);
+        }
     }
 }
-function getResults(){
+function getResults() {
     getAsp();
     getTraits();
     printResults();
 }
+//outputing results for user to see
 function getAsp() {
     var maxVal = 0;
     var maxKey;
@@ -124,13 +180,13 @@ function getAsp() {
     resultAsp = maxKey;
 }
 
-function getTraits(){
-   var sortTrait=new Map([...traits.entries()].sort((a,b)=>b[1]-a[1])); //sort map of traits descending order
-   resultTraits=[...sortTrait.keys()]
-   num=resultTraits.length-1
-   for(var i=num;i>2;i--){
-       resultTraits.pop;
-   }
+function getTraits() {
+    var sortTrait = new Map([...traits.entries()].sort((a, b) => b[1] - a[1])); //sort map of traits descending order
+    resultTraits = [...sortTrait.keys()]
+    num = resultTraits.length - 1
+    for (var i = num; i > 2; i--) {
+        resultTraits.pop;
+    }
 }
 
 function printResults() {

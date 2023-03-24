@@ -14,10 +14,15 @@ function evaluate(choice, index) {
     if (obj.hasOwnProperty("traits")) {
         var trt=Object.keys(obj.traits.trait); //store trait keys 
         var trtVal=Object.values(obj.traits.trait); //store the keys values
+        var conflicts=obj.traits.conflicts;
         for(var i=0;i<trt.length;i++){
             console.log("Trait "+(i+1)+"----> "+trt[i]);
             console.log("Trait Value "+(i+1)+"----> "+trtVal[i]);
             addTraits(trt[i],trtVal[i]);//send current key and value 
+        }
+        for(var i=0;i<conflicts.length;i++){
+            console.log("conflict--->"+conflicts[i]);
+            subtractConflicts(conflicts[i]);
         }
     }
     else console.log("no aspiration present for this answer");
