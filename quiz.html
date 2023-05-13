@@ -5,51 +5,246 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style/normalize.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Quiz</title>
 </head>
 
 <body>
-    <div id="gettingPacks">
-        <h4>What Packs Do You Own?</h4>
-        <input type="checkbox" class="packs" id="gtw" value="Get To Work">
-        <label for="gtw">Get To Work</label>
-        <br>
-        <input type="checkbox" class="packs" id="gtg" value="Get Together">
-        <label for="gtg">Get Together</label>
-        <br>
-        <input type="checkbox" class="packs" id="ctl" value="City Living">
-        <label for="ctl">City Living</label>
-        <br>
-        <input type="checkbox" class="packs" id="cd" value="Cats & Dogs">
-        <label for="cd">Cats & Dogs</label>
-        <br>
-        <input type="checkbox" class="packs" id="gf" value="Get Famous">
-        <label for="gf">Get Famous</label>
-        <br>
-        <input type="checkbox" class="packs" id="il" value="Island Living">
-        <label for="il">Island Living</label>
-        <br>
-        <input type="checkbox" class="packs" id="uni" value="Discover University">
-        <label for="uni">Discover University</label>
-        <br>
-        <input type="checkbox" class="packs" id="eco" value="Eco Lifestyle">
-        <label for="eco">Eco Lifestyle</label>
-        <br>
-        <input type="checkbox" class="packs" id="snowy" value="Snowy Escape">
-        <label for="snowy">Snowy Escape</label>
-        <br>
-        <input type="checkbox" class="packs" id="cot" value="Cottage Living">
-        <label for="cot">Cottage Living</label>
-        <br><br>
+    <div class="split left">
+        <div class="logo"></div>
+        <div class="heroimg centered">
+            <img src="/images/srlogo.png">
+        </div>
+    </div>
+    <div class="split right">
+        <nav class="navbar">
+            <a href="index.html"><i class="fa fa-solid fa-arrow-left" style="font-size: 24px;"></i></a>
+        </nav>
+        <div id="gettingPacks">
+            <h1>What Packs Do You Own?</h1>
+            <h4>Select the packs you currently have in game.</h4>
+            <h4 id="scroll">scroll to see more...</h4>
+            <div class="choiceBox">
+                <ul class="ansChoices">
+                    <li>
+                        <input type="checkbox" class="packs" id="gtw" value="Get To Work">
+                        <label for="gtw">
+                            <div class="packOption exp">
+                                <img src="Sims icons/GetToWork.png">
+                                <h2 class="packName">Get To Work</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="gtg" value="Get Together">
+                        <label for="gtg">
+                            <div class="packOption exp">
+                                <img src="Sims icons/GetTogether.PNG">
+                                <h2 class="packName">Get Together</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="ctl" value="City Living">
+                        <label for="ctl">
+                            <div class="packOption exp">
+                                <img src="Sims icons/CityLiving.PNG">
+                                <h2 class="packName">City Living</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="cd" value="Cats & Dogs">
+                        <label for="cd">
+                            <div class="packOption exp">
+                                <img src="Sims icons/CatsAndDogs.PNG">
+                                <h2 class="packName">Cats And Dogs</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="sea" value="Seasons">
+                        <label for="sea">
+                            <div class="packOption exp">
+                                <img src="Sims icons/Seasons.PNG">
+                                <h2 class="packName">Seasons</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="fame" value="Get Famous">
+                        <label for="fame">
+                            <div class="packOption exp">
+                                <img src="Sims icons/GetFamous.PNG">
+                                <h2 class="packName">Get Famous</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="island" value="Island Living">
+                        <label for="island">
+                            <div class="packOption exp">
+                                <img src="Sims icons/IslandLiving.PNG">
+                                <h2 class="packName">Island Living</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="uni" value="Discover University">
+                        <label for="uni">
+                            <div class="packOption exp">
+                                <img src="Sims icons/DiscoverUniversity.PNG">
+                                <h2 class="packName">Discover University</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="eco" value="Eco Lifestyle">
+                        <label for="eco">
+                            <div class="packOption exp">
+                                <img src="Sims icons/EcoLifestyle.PNG">
+                                <h2 class="packName">Eco Lifestyle</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="snowy" value="Snowy Escape">
+                        <label for="snowy">
+                            <div class="packOption exp">
+                                <img src="Sims icons/SnowyEscape.PNG">
+                                <h2 class="packName">Snowy Escape</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="cot" value="Cottage Living">
+                        <label for="cot">
+                            <div class="packOption exp">
+                                <img src="Sims icons/CottageLiving.PNG">
+                                <h2 class="packName">Cottage Living</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="odr" value="Outdoor Retreat">
+                        <label for="odr">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/OutdoorRetreat.PNG">
+                                <h2 class="packName">Outdoor Retreat</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="spa" value="Spa Day">
+                        <label for="spa">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/SpaDay.PNG">
+                                <h2 class="packName">Spa Day</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="vmp" value="Vampires">
+                        <label for="vmp">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/Vampires.PNG">
+                                <h2 class="packName">Vampires</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="parent" value="Parenthood">
+                        <label for="parent">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/Parenthood.PNG">
+                                <h2 class="packName">Parenthood</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="jadv" value="Jungle Adventure">
+                        <label for="jadv">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/JungleAdventure.PNG">
+                                <h2 class="packName">Jungle Adventure</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="stv" value="StrangerVille">
+                        <label for="stv">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/StrangerVille.PNG">
+                                <h2 class="packName">StrangerVille</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="rom" value="Realm Of Magic">
+                        <label for="rom">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/RealmOfMagic.PNG">
+                                <h2 class="packName">Realm Of Magic</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="dhd" value="Dream Home Decorator">
+                        <label for="dhd">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/DreamHomeDecorator.PNG">
+                                <h2 class="packName">Dream Home Decorator</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="wolves" value="Werewolves">
+                        <label for="wolves">
+                            <div class="packOption gamep">
+                                <img src="Sims icons/Werewolves.PNG">
+                                <h2 class="packName">Werewolves</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="knit" value="Knifty Knit">
+                        <label for="knit">
+                            <div class="packOption stuffp">
+                                <img src="Sims icons/KniftyKnitting.PNG">
+                                <h2 class="packName">Knifty Knitting</h2>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="packs" id="btd" value="Bust The Dust">
+                        <label for="btd">
+                            <div class="packOption kit">
+                                <img src="Sims icons/BustTheDust.PNG">
+                                <h2 class="packName">Bust The Dust</h2>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="subBtn">
+                <input type="submit" value="Continue" onclick="getPacks()" id="startBtn"><br><br>
+            </div>
+        </div>
+        <section class="page2" style="display: none">
+            <div class="quizContainer" style="display: none;"></div>
+            <div class="resultContainer" style="display: none"></div>
+            <div class="userAction">
+                <input style="display:none;" id="skipbtn" type="button" value="Skip" onclick="pressSkip()">
+                <input style="display:none;" type="button" id="nextbtn" value="Next" onclick="pressNext()"><br><br>
+            </div>
+        </section>
+    </div>
 
-        <input type="submit" value="Start Questionaire" onclick="getPacks()"><br><br>
-    </div>
-    <div class="quizContainer" style="border: solid 2px black;"></div>
-    <div class="resultContainer" style="border: solid 2px red;"></div>
-    <div class="userAction">
-        <input style="display:none;" id="skipbtn" type="button" value="Generate A New Question" onclick="pressSkip()"><br>
-        <input style="display:none;" type="button" id="nextbtn" value="Next" onclick="pressNext()"><br><br>
-    </div>
 </body>
 <!-- JAVASCRIPT FILES -->
 <script src="questions.js"></script>

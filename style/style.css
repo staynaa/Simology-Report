@@ -1,0 +1,202 @@
+/* ALL */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+html{
+    height: 100vh;
+    padding: 0;
+}
+body {
+    background-color: #FAF9F6;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+}
+i{color: black;}
+h1 {font-weight: 900;}
+h4 {font-weight: 300;}
+#gettingPacks input[type="checkbox"][class="packs"] {display: none;}
+.ansChoices{list-style-type: none;}
+.exp {
+    background-color: rgb(165, 252, 244);
+    color: rgb(0, 146, 151);
+}
+.gamep {
+    background-color: rgb(165, 181, 252);
+    color: rgb(15, 0, 151);
+}
+.stuffp{
+    background-color: rgb(165, 252, 165);
+    color: rgb(18, 151, 0);
+}
+.kit{
+    background-color: rgb(213, 157, 221);
+    color: rgb(136, 47, 148);
+}
+#gettingPacks label {
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+:checked+label .packOption {
+    background-color: rgb(173, 173, 173);
+}
+:checked+label .packName {
+    color: gray;
+}
+:checked+label .packOption img {
+    opacity: .2;
+}
+.subBtn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* quiz part */
+#gettingPacks h1,#gettingPacks h4 {text-align: center;}
+    .ansChoices {
+        border: 2px solid black;
+        margin: 10px;
+        margin-top: 0;
+        padding-left: 0;
+
+        height: 400px;
+        overflow: auto;
+    }
+    .packOption {
+        display: flex;
+        align-items: center;
+    }
+    .packOption img {
+        width: 40px;
+        height: auto;
+        padding-left: 10px;
+    }
+    .packName {
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .subBtn {
+        /* overflow: hidden; */
+        bottom: 0;
+    }
+
+    #startBtn {
+        background-color: #dbdbdb;
+        width: 75%;
+        padding: 10px;
+        color: black;
+        border: black solid 3px;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 5px 6px 0px 1px rgb(46, 2, 82);
+    }
+    #startBtn:hover{
+        background-color: rgb(97, 59, 185);
+    }
+
+/* mobile and tablet */
+@media screen and (max-width: 786px){
+
+    .navbar a{
+        display: inline;
+        padding: 20px;
+        color: black;
+    }
+    .left{
+        display: none;
+    }
+    /* #gettingPacks h1,#gettingPacks h4 {text-align: center;}
+    .ansChoices {
+        border: 2px solid black;
+        margin: 10px;
+        margin-top: 0;
+        padding-left: 0;
+
+        height: 400px;
+        overflow: auto;
+    }
+    .packOption {
+        display: flex;
+        align-items: center;
+    }
+    .packOption img {
+        width: 40px;
+        height: auto;
+        padding-left: 10px;
+    }
+    .packName {
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .subBtn {
+        /* overflow: hidden;
+        bottom: 0;
+    }
+
+    #startBtn {
+        background-color: #dbdbdb;
+        width: 75%;
+        padding: 10px;
+        color: black;
+        border: black solid 3px;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 5px 6px 0px 1px rgb(46, 2, 82);
+    }
+    #startBtn:hover{
+        background-color: rgb(97, 59, 185);
+    } */
+}
+/* desktop */
+@media screen and (min-width: 787px){
+    #scroll{display: none;}
+
+/* left side image */
+.split{
+
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.left{
+    display: block;
+    left: 0;
+    /* background-color: rgb(14, 87, 0); */
+    background: rgb(8,78,80);
+background: linear-gradient(131deg, rgba(8,78,80,1) 0%, rgba(9,121,87,1) 35%, rgba(118,194,42,1) 100%);
+}
+.right{
+    right:0;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .centered img {
+    width: 300px;
+  }
+  i{padding-left: 20px;}
+
+    /* .packOption {
+        display: grid;
+        align-items: center;
+    }
+    .packOption img {
+        height: 50px;
+        width: auto;
+        padding: 10px;
+        padding-left: 30px;
+    }
+    .packName {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .choiceBox{padding: 100px;} */
+}

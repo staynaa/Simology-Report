@@ -1,5 +1,6 @@
 //variables used in this script
 const qTotal = Qs.length; //size json questions from questions.js
+const quizSec = document.querySelector('.page2');
 const quizdiv = document.querySelector('.quizContainer'); //where quiz questions ans answer will display
 const next = document.getElementById("nextbtn"); //next button
 const skip = document.getElementById("skipbtn");//skip button 
@@ -24,7 +25,7 @@ function getPacks() {
             index++; //can now be incremented since an element value was added to the array
         }
     }
-    //after getting all packs... 
+    //after getting all packs...
     setKeys(owned);
     hidePackQuestion(); //hides the check box form
     getUserQs(); //goesthrough questions in the json, searches and stores all possible questions the user can answer.
@@ -143,6 +144,7 @@ const packquest = document.getElementById("gettingPacks");
 const skipQ = document.getElementById("skipbtn");
 function hidePackQuestion() { //hides the what pack you have question
     packquest.style.display = "none"; //hides
+    quizSec.style.display="block"; 
     skipQ.style.display = "block"; //shows the skip button for quiz
 }
 
@@ -174,30 +176,42 @@ function evalAnswer(index) { //this is where answers are calculated to put point
     if (amountAnswered < userQs.length) displayQandAs();
     else {
         console.log("Quiz Done");
-        quizdiv.innerHTML = `<h1>Quiz Done</h1>`
+        quizdiv.style.display="none";
         next.style.display = "none";
         skipQ.style.display = "none";
+        quizSec.style.display="block"
         getResults();
     }
 }
 //showing and hiding next button when an option is selected
 
 function print(idx) { //display quiz with questions and answers in html
+    quizdiv.style.display="block";
     quizdiv.innerHTML = `
-<h4>${Qs[idx].question}</h4>
-<form id="ans">
-    <input type="radio" id="ans1" name="ansCh" onclick="showNextBtn()" value="answer1">
-    <label for="ans1">${Qs[idx].answer1.answer}</label><br><br>
-
-    <input type="radio" id="ans2" name="ansCh" onclick="showNextBtn()" value= "answer2">
-    <label for="ans2">${Qs[idx].answer2.answer}</label><br><br>
-
-    <input type="radio" id="ans3" name="ansCh" onclick="showNextBtn()" value= "answer3">
-    <label for="ans3">${Qs[idx].answer3.answer}</label><br><br>
-
-    <input type="radio" id="ans4" name="ansCh" onclick="showNextBtn()" value= "answer4">
-    <label for="ans4">${Qs[idx].answer4.answer}</label><br><br>
-</form>
+<div class="quizbox">
+    <h1 class="question">${Qs[idx].question}</h1>
+    <h4>Select an answer below</h4>
+    <div class="formbox">
+        <form id="ans">
+            <div class="ansbox">
+                <input type="radio" id="ans1" name="ansCh" onclick="showNextBtn()" value="answer1">
+                <label for="ans1">${Qs[idx].answer1.answer}</label><br><br>
+            </div>
+            <div class="ansbox">
+                <input type="radio" id="ans2" name="ansCh" onclick="showNextBtn()" value= "answer2">
+                <label for="ans2">${Qs[idx].answer2.answer}</label><br><br>
+            </div>
+            <div class="ansbox">
+                <input type="radio" id="ans3" name="ansCh" onclick="showNextBtn()" value= "answer3">
+                <label for="ans3">${Qs[idx].answer3.answer}</label><br><br>
+            </div>
+            <div class="ansbox">
+                <input type="radio" id="ans4" name="ansCh" onclick="showNextBtn()" value= "answer4">
+                <label for="ans4">${Qs[idx].answer4.answer}</label><br><br>
+            </div>
+        </form>
+    </div>
+</div>
 `
 }
 function pressNext() {
