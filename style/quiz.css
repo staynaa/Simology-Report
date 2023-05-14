@@ -1,3 +1,6 @@
+ html{
+     color: #FAF9F6;
+ }
  .quizbox{
     padding: 5px;
 }
@@ -48,10 +51,11 @@
 .userAction{
     display: flex;
     justify-content: space-between;
+    padding: 0px 10px 0px 10px;
     /* align-items: center; */
 }
 #nextbtn{
-    align-items: right;
+    margin-left: auto;
     background-color: #81dbcc;
     box-shadow: 5px 6px 0px 1px rgb(13, 44, 36);
 }
@@ -61,6 +65,11 @@
     box-shadow: 5px 6px 0px 1px rgb(53, 14, 37);
 }
 
+@media screen and (max-width:786px) {
+    html, body{
+        /* overflow: auto; */
+    }
+}
 @media screen and (min-width:787px) {
     .quizbox{
         text-align: left;

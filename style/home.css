@@ -5,6 +5,12 @@
     overflow: hidden;
     border-bottom: 2px solid black;
 }
+.logoContainer{
+    text-align: center;
+}
+.desc {
+    color: #dbdbdb;
+}
   .topnav a {
     float: left;
     display: block;
@@ -27,7 +33,7 @@
   #heroimg{
       height: 400px; 
       position: relative;
-    bottom: 0; 
+    /* bottom: 0;  */
   }
 
 html,body{
@@ -36,7 +42,7 @@ html,body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 .centered{
     /* background-color: rgb(167, 166, 255); */
@@ -57,6 +63,22 @@ background: linear-gradient(165deg, rgba(131,58,180,1) 0%, rgba(29,99,253,1) 47%
 .button:hover{
     background-color: rgb(110, 40, 119);
 }
+.split{
+    width: 100vw;
+    height: 100vh;
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    /* padding-top: 20px; */
+}
+ .centered {
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    text-align: center;
+  }
 /* 430 or 1280 */
 @media screen and (max-width: 786px) {
     #heroimg {
@@ -87,23 +109,28 @@ background: linear-gradient(165deg, rgba(131,58,180,1) 0%, rgba(29,99,253,1) 47%
         justify-content: center;
         align-items: center;
     }
+    .logoimg{
+        width: 150px;
+    }
 }
 @media screen and (min-width:787px){
-
-    .split{
+      .logoimg{
+          width: 200px;
+      }
+      /* .split{
         width: 100vw;
         height: 100vh;
-        /* position: fixed; */
+        /* position: fixed; comment out
         z-index: 1;
         top: 0;
         overflow-x: hidden;
-        /* padding-top: 20px; */
+        /* padding-top: 20px;
     }
      .centered {
-        /* position: absolute; */
-        /* top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
+        /* position: absolute; comment
+        /* top: 50%; comment
+        left: 50%; comment
+        transform: translate(-50%, -50%); comment 
         text-align: center;
-      }
+      } */
 }
