@@ -144,7 +144,7 @@ const packquest = document.getElementById("gettingPacks");
 const skipQ = document.getElementById("skipbtn");
 function hidePackQuestion() { //hides the what pack you have question
     packquest.style.display = "none"; //hides
-    quizSec.style.display="block"; 
+    quizSec.style.display = "block";
     skipQ.style.display = "block"; //shows the skip button for quiz
 }
 
@@ -169,47 +169,52 @@ function evalAnswer(index) { //this is where answers are calculated to put point
             }
         }
     }
-    evaluate(chosen,index);//send in chosen andindex to get values from json and storein map
+    evaluate(chosen, index);//send in chosen andindex to get values from json and storein map
     //console.log(chosen);
     amountAnswered++;//increment and call display for new question
     console.log(amountAnswered + "<--- questions answered")
     if (amountAnswered < userQs.length) displayQandAs();
     else {
         console.log("Quiz Done");
-        quizdiv.style.display="none";
+        quizdiv.style.display = "none";
         next.style.display = "none";
         skipQ.style.display = "none";
-        quizSec.style.display="block"
+        quizSec.style.display = "block"
         getResults();
     }
 }
 //showing and hiding next button when an option is selected
 
 function print(idx) { //display quiz with questions and answers in html
-    quizdiv.style.display="block";
+    quizdiv.style.display = "block";
     quizdiv.innerHTML = `
 <div class="quizbox">
-    <h1 class="question">${Qs[idx].question}</h1>
+    <h1 id="countText">${amountAnswered + 1}/${max}</h1>
+    <h1 id="questionText">${Qs[idx].question}</h1>
     <h4>Select an answer below</h4>
     <div class="formbox">
-        <form id="ans">
-            <div class="ansbox">
+        <ul id="answersList">
+        <div class="topAns">
+            <li class="ansbox">
                 <input type="radio" id="ans1" name="ansCh" onclick="showNextBtn()" value="answer1">
-                <label for="ans1">${Qs[idx].answer1.answer}</label><br><br>
-            </div>
-            <div class="ansbox">
+                <label for="ans1"><div class="ansText">${Qs[idx].answer1.answer}</div></label><br><br>
+            </li>
+            <li class="ansbox">
                 <input type="radio" id="ans2" name="ansCh" onclick="showNextBtn()" value= "answer2">
-                <label for="ans2">${Qs[idx].answer2.answer}</label><br><br>
-            </div>
-            <div class="ansbox">
+                <label for="ans2"><div class="ansText">${Qs[idx].answer2.answer}</div></label><br><br>
+            </li>
+        </div>
+        <div class="bottomAns>
+            <li class="ansbox">
                 <input type="radio" id="ans3" name="ansCh" onclick="showNextBtn()" value= "answer3">
-                <label for="ans3">${Qs[idx].answer3.answer}</label><br><br>
-            </div>
-            <div class="ansbox">
+                <label for="ans3"><div class="ansText">${Qs[idx].answer3.answer}</div></label><br><br>
+            </li>
+            <li class="ansbox">
                 <input type="radio" id="ans4" name="ansCh" onclick="showNextBtn()" value= "answer4">
-                <label for="ans4">${Qs[idx].answer4.answer}</label><br><br>
+                <label for="ans4"><div class="ansText">${Qs[idx].answer4.answer}</div></label><br><br>
+            </li>
             </div>
-        </form>
+        </ul>
     </div>
 </div>
 `
@@ -225,7 +230,7 @@ function pressSkip() {
 //todo, fix check to also check if a question has already been answered
 // completely remove it from the array if so.
 
-function debugLog(){ //for console
+function debugLog() { //for console
     console.log("Questions: ")
     console.log(...userQs)
     console.log("answered: ")

@@ -1,8 +1,9 @@
 /* ALL */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
 html{
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0;
+    margin: 0;
 }
 body {
     background-color: #FAF9F6;
@@ -54,14 +55,13 @@ h4 {font-weight: 300;}
     display: flex;
 }
 
-/* quiz part */
 #gettingPacks h1,#gettingPacks h4 {text-align: center;}
     .ansChoices {
         border: 2px solid black;
         margin: 10px;
         margin-top: 0;
         padding-left: 0;
-
+/* scroll below */
         height: 400px;
         overflow: auto;
     }
@@ -100,33 +100,24 @@ h4 {font-weight: 300;}
 /* mobile and tablet */
 @media screen and (max-width: 786px){
 
-    .navbar a{
-        display: inline;
-        padding: 20px;
-        color: black;
-    }
-    .left{
-        display: none;
-    }
 }
 /* desktop */
 @media screen and (min-width: 787px){
     #scroll{display: none;}
 .split{
-    width: 50%;
-    height: 100%;
-    position: fixed;
+    width: 100%;
+    height: 100vh;
+    /* position: fixed; */
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
+    /* padding-top: 20px; */
+}
+#gettingPacks, .quizbox,.userAction{
+    width: 50%;
+    margin: auto;
 }
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    justify-content: center;
   }
-  i{padding-left: 20px;}
 }
