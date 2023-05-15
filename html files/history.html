@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/home.css">
+
+    <title>View History</title>
+</head>
+
+<body>
+    <div class="logoContainer"><img src="/images/logo.png" class="logoimg"></div>
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="#">Github</a>
+    </div>
+
+    <div class="split right centered history">
+
+    </div>
+</body>
+<script>
+    const historyStorage = document.querySelector('.history');
+    // function checkStorage() {
+        if (localStorage.getItem("firstname") === null) {
+            historyStorage.innerHTML =
+                `
+            <h2>Oops! Looks like you haven't saved anything. Don't worry! Just take the quiz here...</h2>
+            <div class="start">
+                <input type="button" class="button" value="Get Report!" onclick="window.location.href = '/html files/quiz.html';">
+            </div> 
+            `
+        }
+        else {
+            historyStorage.innerHTML =
+                `
+    <div class="sim_name">
+            <h2>${localStorage.getItem("firstname")} ${localStorage.getItem("lastname")}</h2>
+        </div>
+        <div class="occult">
+            <p>Occult: ${localStorage.getItem("occult")} Sim</p>
+        </div>
+        <div class="world">
+            <p>Location: ${localStorage.getItem("world")}</p>
+        </div>
+        <div class="walk">
+            <p>Walk Style: ${localStorage.getItem("walk")}</p>
+        </div>
+        <div class="voice">
+            <p>Voice Pitch: ${localStorage.getItem("voice")}</p>
+        </div>
+        <div class="fashion">
+            <p>Fashion Aesthetic: ${localStorage.getItem("fashion")}</p>
+        </div>
+        <div class="aspirations">
+            <h3>Aspiration:</h3>
+            <p class="aspTxt">${localStorage.getItem("asp")}</p>
+        </div>
+        <div class="TraitsCont">
+            <h3>Traits:</h3>
+            <div class="trait1">
+                <p>${localStorage.getItem("trait1")}</p>
+            </div>
+            <div class="trait2">
+                <p>${localStorage.getItem("trait2")}</p>
+            </div>
+            <div class="trait3">
+                <p>${localStorage.getItem("trait3")}</p>
+            </div>
+        </div>
+        <div class="likeCont">
+            <div class="likes">
+                <p>Likes: ${localStorage.getItem("like1")}, ${localStorage.getItem("like2")}, ${localStorage.getItem("like3")}</p>
+            </div>
+            <div class="dislikes">
+                <p>Dislikes: ${localStorage.getItem("dislike1")}, ${localStorage.getItem("dislike2")}, ${localStorage.getItem("dislike3")}</p>
+            </div>
+        </div>
+    `
+        }
+    // }
+</script>
+
+</html>

@@ -456,44 +456,44 @@ function printResults() {
         <div class="aspirations">
         <div class= aspLabel>
             <h3>Aspiration: ${resultAsp}</h3>
-           <img class="aspImg" src="${aspSrc}">
+           <img class="aspImg" src="../${aspSrc}">
         </div>
            <h4 class="aspTxt">${aspText}</h4>
         </div>
         <div class="trait1">
-            <img class="trtImg" src="${trait1Src}">
+            <img class="trtImg" src="../${trait1Src}">
             <h3>${resultTraits[0]}</h3>
             <h4>${trt1Text}</h4>
         </div>
         <div class="trait2">
-            <img class="trtImg" src="${trait2Src}">
+            <img class="trtImg" src="../${trait2Src}">
             <h3>${resultTraits[1]}</h3>
             <h4>${trt2Text}</h4>
         </div>
         <div class="trait3">
-            <img class="trtImg" src="${trait3Src}">
+            <img class="trtImg" src="../${trait3Src}">
             <h3>${resultTraits[2]}</h3>
             <h4>${trt3Text}</h4>
         </div>
         <div class="likes">
             <h3>Likes</h3>
             <ul class="likesList">
-                <li><img class="likeImg" src="${likes1Src}"><h4>${resultLikes[0]}</h4></li>
-                <li><img class="likeImg" src="${likes2Src}"><h4>${resultLikes[1]}</h4></li>
-                <li><img class="likeImg" src="${likes3Src}"><h4>${resultLikes[2]}</h4></li>
+                <li><img class="likeImg" src="../${likes1Src}"><h4>${resultLikes[0]}</h4></li>
+                <li><img class="likeImg" src="../${likes2Src}"><h4>${resultLikes[1]}</h4></li>
+                <li><img class="likeImg" src="../${likes3Src}"><h4>${resultLikes[2]}</h4></li>
             </ul>
         </div>
         <div class="dislikes">
             <h3>Dislikes</h3>
             <ul class="likesList">
-                <li><img class="dislikeImg" src="${dis1Src}"><h4>${resultDislikes[0]}</h4></li>
-                <li><img class="dislikeImg" src="${dis2Src}"><h4>${resultDislikes[1]}</h4></li>
-                <li><img class="dislikeImg" src="${dis3Src}"><h4>${resultDislikes[2]}</h4></li>
+                <li><img class="dislikeImg" src="../${dis1Src}"><h4>${resultDislikes[0]}</h4></li>
+                <li><img class="dislikeImg" src="../${dis2Src}"><h4>${resultDislikes[1]}</h4></li>
+                <li><img class="dislikeImg" src="../${dis3Src}"><h4>${resultDislikes[2]}</h4></li>
             </ul>
         </div>
         <div class="world">
             <h3>You live in <em>${resultWorld}</em></h3>
-            <img class="worldImg" src="${worldSrc}">
+            <img class="worldImg" src="../${worldSrc}">
         </div>
         <div class="fashion">
             <h3>Fashion Aesthetic: <em>${resultFashion}</em></h3>
@@ -503,7 +503,7 @@ function printResults() {
         </div>
         <div class="occult">
             <h3>${resultOccult} Sim</h3>
-            <img class="occultImg" src="${occultSrc}">
+            <img class="occultImg" src="../${occultSrc}">
         </div>
         <div class="walk">
             <h3>Walk Style: <em>${resultWalk}</em></h3>
@@ -553,44 +553,32 @@ function printResults() {
                 <p>Dislikes: ${resultDislikes[0]}, ${resultDislikes[1]}, ${resultDislikes[2]}</p>
             </div>
         </div>
-
-
       </div>
 
+      <div class="saveButton">
+            <input type="button" class="button" value="Save Report" onClick="saveLocally()">
+        </div> 
 `
 }
-// <h4>Results:</h4>
-// <p>Occult: ${resultOccult}</p>
-// <ul class="asptrt">
-//     <li>Your Aspiration: ${resultAsp}</li>
-//     <li>Traits:
-//         <ul>
-//             <li>${resultTraits[0]}</li>
-//             <li>${resultTraits[1]}</li>
-//             <li>${resultTraits[2]}</li>
-//         </ul>
-//     </li>
-// </ul>
-// <div class="likedislike">
-//     <ul class="likes">
-//         <h4>Likes</h4>
-//         <li>${resultLikes[0]}</li>
-//         <li>${resultLikes[1]}</li>
-//         <li>${resultLikes[2]}</li>
-//     </ul>
-//     <ul class="dislikes">
-//         <h4>Dislikes</h4>
-//         <li>${resultDislikes[0]}</li>
-//         <li>${resultDislikes[1]}</li>
-//         <li>${resultDislikes[2]}</li>
-//     </ul>
-// </div>
-// <div class="otherResults">
-//     <ul>
-//         <li>Job: ${resultJob}</li>
-//         <li>Fashion Style: ${resultFashion} </li>
-//         <li>Walkstyle: ${resultWalk} </li>
-//         <li>Voice Pitch: ${resultVoice}</li>
-//         <li>World: ${resultWorld}</li>
-//     </ul>
-// </div>
+function saveLocally() {
+    localStorage.setItem("firstname",fname);
+    localStorage.setItem("lastname",lname);
+    localStorage.setItem("world",resultWorld);
+    localStorage.setItem("voice",resultVoice);
+    localStorage.setItem("occult",resultOccult);
+    localStorage.setItem("walk",resultWalk);
+    localStorage.setItem("fashion",resultFashion);
+    localStorage.setItem("asp",resultAsp);
+    localStorage.setItem("trait1",resultTraits[0]);
+    localStorage.setItem("trait2",resultTraits[1]);
+    localStorage.setItem("trait3",resultTraits[2]);
+    localStorage.setItem("like1",resultLikes[0]);
+    localStorage.setItem("like2",resultLikes[1]);
+    localStorage.setItem("like3",resultLikes[2]);
+    localStorage.setItem("dislike1",resultDislikes[0]);
+    localStorage.setItem("dislike2",resultDislikes[1]);
+    localStorage.setItem("dislike3",resultDislikes[2]);
+    alert("Saved your report!");
+    // console.log(localStorage);
+
+}

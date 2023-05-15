@@ -25,6 +25,18 @@ border: 1px solid rgba(255,255,255,0.25);
         margin: auto;
     } */
 }
+.saveButton{padding-top: 10px;}
+.saveButton .button {
+    /* background-color: rgb(127, 255, 110); */
+    cursor: pointer;
+    background-color: #dbdbdb;
+    width: 300px;
+    padding: 10px;
+    color: black;
+    border: black solid 3px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 6px 0px 1px rgb(52, 0, 87);
+}
 
 /* desktop/tablet */
 @media screen and (min-width:787px){
