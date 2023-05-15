@@ -56,6 +56,30 @@ const images = {//{
     "Extreme Sports Enthusiast": { "source": "Sims images/Aspiration_TS4_Extreme_Sports_Enthusiast.png", "text": "This Sim wants to explore Mt. Komorebi's wilderness and participate in extreme snow sports." },
     "Mt.Komorebi Sightseer": { "source": "Sims images/Aspiration_TS4_Mt._Komorebi_Sightseer.png", "text": "This Sim wants to explore Mt. Komorebi's culture and experience everything it has to offer." },
     "Country Caretaker": { "source": "Sims images/Aspiration_TS4_Country_Caretaker.png", "text": "Country Caretakers want to tend the countryside and befriend all animals and critters!" },
+    
+    "Outdoor Enthusiast": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Inner Peace": { "source": "Sims images/Aspiration_TS4_Inner_Peace.png", "text": "" },
+    "Self-Care": { "source": "Sims images/Aspiration_TS4_Self-Care_Specialist.png", "text": "" },
+    "Zen Guru": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Vampire Family": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Master Vampire": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Good Vampire": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Super Parent": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Jungle Explorer": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Archaeology Scholar": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "StrangerVille Mystery": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Pureveyor Of Potions": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Spellcraft & Sorcery": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Lone Wolf": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Emissary Of The Collective": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Wildfang Renegade": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Cure Seeker": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Lord/Lady Of The Knits": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Perfectly Pristine": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Fabulously Filthy": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    
+
+    
     //},
     //"traits": {
     "Active": { "source": "Sims images/Trait_TS4_Active.png", "text": "These Sims tend to be Energized, can Pump Up other Sims, and may become upset if they don't exercise for a period of time." },
@@ -113,6 +137,11 @@ const images = {//{
     "Proper": { "source": "Sims images/Trait_TS4_Proper.png", "text": "These Sims tend to disapprove of other Sims' improper behavior such as Mean or Mischievous socials, but find themselves happier in Formal Outfits and have a much easier time with Friendly and Romantic socials." },
     "Animal Enthusiast": { "source": "Sims images/Trait_TS4_Animal_Enthusiast.png", "text": "These Sims are obsessed with animals, and will seek their company often. They will have an easier time caring for animals and getting closer to them." },
     "Lactose Intolerant": { "source": "Sims images/Trait_TS4_Lactose_Intolerant.png", "text": "These Sims will become sick if they eat dairy, but will feel great if they have avoided it for a while." },
+    
+    "Squeamish": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "High Maintenance": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Paranoid": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    
     //},
     //"careers": {
     'Astronaut': { "source": "Sims images/TS4_Career_Astronaut.png", "alt": "" },
@@ -129,6 +158,19 @@ const images = {//{
     "Doctor": { "source": "Sims images/TS4_Career_Doctor.png", "alt": "" },
     "Scientist": { "source": "Sims images/TS4_Career_Scientist.png", "alt": "" },
     "Detective": { "source": "Sims images/TS4_Career_Detective.png", "alt": "" },
+    
+    "Critic": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Politician": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Social Media": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Actor/Actress": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Conservationist": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Education": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Engineer": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Law": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Civil Designer": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Salaryperson": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Military": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+
     //},
     //"likes": {
     'Comedy': { "source": "Sims images/Skill_TS4_Comedy.png", "alt": "" },
@@ -182,6 +224,15 @@ const images = {//{
     "Japanese Folk Music": { "source": "Sims images/TS4_Like_Japanese_Folk_Music.png", "alt": "" },
     "Cross-stitch": { "source": "Sims images/TS4_Like_Cross-stitch.png", "alt": "" },
     "Cottagecore Music": { "source": "Sims images/TS4_Like_Cottagecore_Music.png", "alt": "" },
+    
+    "Wellness": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "New Age Music": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Pipe Organ": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Latin Pop Music": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Latin Music": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Strange Tunes Music": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Metal Music": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+
     //},
     //"occults": {
     "Default": { "source": "Sims images/defaultPlumbob.png", "alt": "" },
@@ -203,6 +254,11 @@ const images = {//{
     "Evergreen Harbor": { "source": "Sims images/Evergreen_Harbor_Icon.png", "alt": "" },
     "Mt. Komorebi": { "source": "Sims images/Mt._Komorebi_Icon.png", "alt": "" },
     "Henford-on-Bagley": { "source": "Sims images/HenfordLogo.png", "alt": "" },
+    
+    "Forgotten Hollow": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "StrangerVille": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Glimmerbrook": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
+    "Moonwood Mill": { "source": "Sims images/Aspiration_TS4_Outdoor_Enthusiast.png", "text": "" },
     //},
     //}
 }

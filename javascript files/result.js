@@ -256,6 +256,9 @@ function setKeys(packsOwned) {
             traits.set("Unflirty", 0);
             worlds.push("San Myshuno");
             likes.set("Singing", 0);
+            jobs.set("Critic",0);
+            jobs.set("Politician",0);
+            jobs.set("Social Media",0);
         }
         if (packsOwned[i] === "Cats & Dogs") { //EP
             asp.set("Friend of Animals", 0);
@@ -272,6 +275,7 @@ function setKeys(packsOwned) {
             worlds.push("Del Sol Valley");
             likes.set("Acting", 0);
             likes.set("Media Production", 0);
+            jobs.set("Actor/Actress",0);
         }
         if (packsOwned[i] === "Island Living") { //EP
             asp.set("Beach Life", 0);
@@ -280,12 +284,16 @@ function setKeys(packsOwned) {
             occult.set("Mermaid", 0);
             worlds.push("Sulani");
             likes.set("Island Radio Music", 0);
+            jobs.set("Conservationist",0);
         }
         if (packsOwned[i] === "Discover University") { //EP
             asp.set("Academic", 0);
             worlds.push("Britechester");
             likes.set("Research & Debate", 0);
             likes.set("Robotics", 0);
+            jobs.set("Education",0);
+            jobs.set("Engineer",0);
+            jobs.set("Law",0);
         }
         if (packsOwned[i] === "Eco Lifestyle") { //EP
             asp.set("Eco Innovator", 0);
@@ -295,6 +303,7 @@ function setKeys(packsOwned) {
             traits.set("Recycle Disciple", 0);
             traits.set("Maker", 0);
             worlds.push("Evergreen Harbor");
+            jobs.set("Civil Designer",0);
         }
         if (packsOwned[i] === "Snowy Escape") { //EP
             asp.set("Extreme Sports Enthusiast", 0);
@@ -306,6 +315,7 @@ function setKeys(packsOwned) {
             likes.set("Skiing", 0);
             likes.set("Snowboarding", 0);
             likes.set("Japanese Folk Music", 0);
+            jobs.set("Salaryperson",0);
         }
         if (packsOwned[i] === "Cottage Living") { //EP
             asp.set("Country Caretaker", 0);
@@ -314,6 +324,64 @@ function setKeys(packsOwned) {
             worlds.push("Henford-on-Bagley");
             likes.set("Cross-stitch", 0);
             likes.set("Cottagecore Music", 0);
+        }
+        if(packsOwned[i]==="Outdoor Retreat"){ //GP
+            asp.set("Outdoor Enthusiast",0);
+            traits.set("Squeamish",0);
+        }
+        if(packsOwned[i]==="Spa Day"){ //GP
+            asp.set("Inner Peace",0);
+            asp.set("Self-Care",0);
+            asp.set("Zen Guru",0);
+            traits.set("High Maintenance",0);
+            likes.set("Wellness", 0);
+            likes.set("New Age Music", 0);
+        }
+        if(packsOwned[i]==="Vampires"){ //GP
+            asp.set("Vampire Family",0);
+            asp.set("Master Vampire",0);
+            asp.set("Good Vampire",0);
+            worlds.push("Forgotten Hollow");
+            likes.set("Pipe Organ", 0);
+            occult.set("Vampire",0);
+        }
+        if(packsOwned[i]==="Parenthood"){ //GP
+            asp.set("Super Parent",0);
+        }
+        if(packsOwned[i]==="Jungle Adventure"){ //GP
+            asp.set("Jungle Explorer",0);
+            asp.set("Archaeology Scholar",0);
+            likes.set("Latin Pop Music", 0);
+            likes.set("Latin Music", 0);
+        }
+        if(packsOwned[i]==="StarngerVille"){ //GP
+            asp.set("StrangerVille Mystery",0);
+            traits.set("Paranoid",0);
+            jobs.set("Military",0);
+            worlds.push("StrangerVille");
+            likes.set("Strange Tunes Music", 0);
+        }
+        if(packsOwned[i]==="Realm Of Magic"){ //GP
+            asp.set("Pureveyor Of Potions",0);
+            asp.set("Spellcraft & Sorcery",0);
+            worlds.push("Glimmerbrook");
+            occult.set("Spellcaster", 0);
+        }
+        if(packsOwned[i]==="Werewolves"){ //GP
+            asp.set("Lone Wolf",0);
+            asp.set("Emissary Of The Collective",0);
+            asp.set("Wildfang Renegade",0);
+            asp.set("Cure Seeker",0);
+            worlds.push("Moonwood Mill");
+            occult.set("Werewolves", 0);
+        }
+        if(packsOwned[i]==="Nifty Knitting"){ //GP
+            asp.set("Lord/Lady Of The Knits",0);
+            likes.set("Metal Music", 0);
+        }
+        if(packsOwned[i]==="Bust The Dust"){ //GP 
+            asp.set("Perfectly Pristine",0);
+            asp.set("Fabulously Filthy",0);
         }
     }
 }
