@@ -20,11 +20,11 @@ var resultWalk;
 var resultFashion;
 var resultVoice;
 var resultWorld;
-var testSrc="Sims images/Aspiration_TS4_Academic.png"
+var fname,lname;
 var aspSrc;
 var trait1Src,trait2Src,trait3Src;
 var likes1Src,likes2Src, likes3Src,dis1Src,dis2Src, dis3Src;
-var jobSrc, worldSrc;
+var jobSrc, worldSrc, occultSrc;
 //defaults
 occult.set("Default", 3);
 walkstyle.set("Default Walk", 5);
@@ -419,12 +419,23 @@ function getVoice() {
 }
 
 function getImages(){
-     var imgobj= images
-     console.log(imgobj.Bodybuilder.source)
-    //  if(imgobj.hasOwnProperty(resultAsp)){
-    //     aspSrc=imgobj.aspirations.resultAsp.source;
-    //     console.log(aspSrc);
-    //  }
+     //console.log(images.Bodybuilder.source)
+        //console.log(resultAsp)
+        aspSrc=images[resultAsp].source; //get the result asp
+        //console.log(aspSrc);
+        trait1Src= images[resultTraits[0]].source;
+        trait2Src= images[resultTraits[1]].source;
+        trait3Src= images[resultTraits[2]].source;
+        likes1Src= images[resultLikes[0]].source;
+        likes2Src= images[resultLikes[1]].source;
+        likes3Src= images[resultLikes[2]].source;
+        dis1Src= images[resultDislikes[0]].source;
+        dis2Src= images[resultDislikes[1]].source;
+        dis3Src= images[resultDislikes[2]].source;
+        // worldSrc=images[resultWorld].source;
+        // occultSrc= images[resultOccult].source;
+        fname=firstname[Math.floor(Math.random() * firstname.length)];
+        lname=lastname[Math.floor(Math.random() * lastname.length)];
  }
 
 
@@ -434,22 +445,44 @@ function printResults() {
     resultdiv.style.display = "block";
     resultdiv.innerHTML =
         `
-
     <div class="container">
         <div class="sim_name">
-
+            <h2>Name: ${fname} ${lname}</h2>
         </div>
-        <div class="aspiration">
-           <img class="aspImg" src="${testSrc}">
+        <div class="aspirations">
+        <div class= aspLabel>
+            <h3>Aspiration: ${resultAsp}</h3>
+           <img class="aspImg" src="${aspSrc}">
+           </div>
+           <h4 class="aspText">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</h4>
         </div>
-        <div class="traits">
-        
+        <div class="trait1">
+            <img class="trtImg" src="${trait1Src}">
+            <h3>${resultTraits[0]}</h3>
+        </div>
+        <div class="trait2">
+            <img class="trtImg" src="${trait2Src}">
+            <h3>${resultTraits[1]}</h3>
+        </div>
+        <div class="trait3">
+            <img class="trtImg" src="${trait3Src}">
+            <h3>${resultTraits[2]}</h3>
         </div>
         <div class="likes">
-        
+            <h3>Likes</h3>
+            <ul class="likesList">
+                <li><img class="likeImg" src="${likes1Src}"><h4>${resultLikes[0]}</h4></li>
+                <li><img class="likeImg" src="${likes2Src}"><h4>${resultLikes[1]}</h4></li>
+                <li><img class="likeImg" src="${likes3Src}"><h4>${resultLikes[2]}</h4></li>
+            </ul>
         </div>
         <div class="dislikes">
-        
+            <h3>Dislikes</h3>
+            <ul class="likesList">
+                <li><img class="dislikeImg" src="${dis1Src}"><h4>${resultDislikes[0]}</h4></li>
+                <li><img class="dislikeImg" src="${dis2Src}"><h4>${resultDislikes[1]}</h4></li>
+                <li><img class="dislikeImg" src="${dis3Src}"><h4>${resultDislikes[2]}</h4></li>
+            </ul>
         </div>
         <div class="world">
         

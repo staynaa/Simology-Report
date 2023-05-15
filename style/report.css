@@ -10,29 +10,56 @@
 .resultContainer{
     padding: 10px;
 }
+.likesList{list-style:none;}
+.container div{
+    border: 1px solid black;
+    align-items: center;
+    text-align: center;
+}
+.container img{
+    width: 100px;
+    /* height: auto; */
+}
 .container {  
-    /* width: 75%; */
+    width: 75%;
     background: rgba(255,255,255,0.5);
 -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.25);
-display: grid; 
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-grid-template-rows: 0.8fr 1.3fr 0.9fr 1fr; 
-gap: 0px 0px; 
-grid-template-areas: 
-  "sim_name sim_name sim_name occult occult"
-  "aspiration aspiration traits traits traits"
-  "likes likes dislikes dislikes walk"
-  "world world fashion fashion voice"; 
-}
-.sim_name { grid-area: sim_name; }
-.aspiration { grid-area: aspiration; }
-.traits { grid-area: traits; }
-.likes { grid-area: likes; }
-.dislikes { grid-area: dislikes; }
-.world { grid-area: world; }
-.fashion { grid-area: fashion; }
-.voice { grid-area: voice; }
-.occult { grid-area: occult; }
-.walk { grid-area: walk; }
+display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.7fr 1.3fr 1fr 1.3fr 0.7fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "sim_name sim_name occult"
+      "aspirations aspirations aspirations"
+      "trait1 trait2 trait3"
+      "likes dislikes world"
+      "walk fashion voice";
+  }
+  
+  .aspirations { grid-area: aspirations;}
+  
+  .trait1 { grid-area: trait1; }
+  
+  .trait2 { grid-area: trait2; }
+  
+  .trait3 { grid-area: trait3; }
+  
+  .sim_name { grid-area: sim_name; }
+  
+  .occult { grid-area: occult; }
+  
+  .likes { grid-area: likes; }
+  
+  .dislikes { grid-area: dislikes; }
+  
+  .world { grid-area: world; }
+  
+  .walk { grid-area: walk; }
+  
+  .fashion { grid-area: fashion; }
+  
+  .voice { grid-area: voice; }
+  
