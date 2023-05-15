@@ -7,7 +7,7 @@ var occult = new Map();
 var style = new Map();
 var walkstyle = new Map();
 var worlds = [];
-var voice = ["Candy","Music Symbol","Bird","Bell","Fire","Trumpet"];
+var voice = ["Candy", "Music Symbol", "Bird", "Bell", "Fire", "Trumpet"];
 var curval;
 var conflictVal = [];
 
@@ -20,27 +20,32 @@ var resultWalk;
 var resultFashion;
 var resultVoice;
 var resultWorld;
+var testSrc="Sims images/Aspiration_TS4_Academic.png"
+var aspSrc;
+var trait1Src,trait2Src,trait3Src;
+var likes1Src,likes2Src, likes3Src,dis1Src,dis2Src, dis3Src;
+var jobSrc, worldSrc;
 //defaults
-occult.set("Default",3);
-walkstyle.set("Default Walk",5);
-walkstyle.set("Perky Walk",0);
-walkstyle.set("Snooty Walk",0);
-walkstyle.set("Swagger Walk",0);
-walkstyle.set("Feminine Walk",0);
-walkstyle.set("Tough Walk",0);
-walkstyle.set("Goofy Walk",0);
-walkstyle.set("Sluggish Walk",0);
-walkstyle.set("Bouncy Walk",0);
-style.set("Normcore",0);
-style.set("Gothcore",0);
-style.set("Athletic Wear",0);
-style.set("Preppy",0);
-style.set("Soft",0);
-style.set("Streetwear",0)
-style.set("Cottagecore",0)
-style.set("Academia",0)
-style.set("Grunge",0)
-style.set("Beachy",0)
+occult.set("Default", 3);
+walkstyle.set("Default Walk", 5);
+walkstyle.set("Perky Walk", 0);
+walkstyle.set("Snooty Walk", 0);
+walkstyle.set("Swagger Walk", 0);
+walkstyle.set("Feminine Walk", 0);
+walkstyle.set("Tough Walk", 0);
+walkstyle.set("Goofy Walk", 0);
+walkstyle.set("Sluggish Walk", 0);
+walkstyle.set("Bouncy Walk", 0);
+style.set("Normcore", 0);
+style.set("Gothcore", 0);
+style.set("Athletic Wear", 0);
+style.set("Preppy", 0);
+style.set("Soft", 0);
+style.set("Streetwear", 0)
+style.set("Cottagecore", 0)
+style.set("Academia", 0)
+style.set("Grunge", 0)
+style.set("Beachy", 0)
 
 
 function addAsp(aspval) {
@@ -181,83 +186,83 @@ function setKeys(packsOwned) {
             traits.set('Mean', 0);
             traits.set('Outgoing', 0);
             //careers
-            jobs.set('Astronaut',0);
-            jobs.set('Athlete',0);
-            jobs.set('Business',0);
-            jobs.set('Criminal',0);
-            jobs.set('Culinary',0);
-            jobs.set('Entertainer',0);
-            jobs.set('Freelance',0);
-            jobs.set('Painter',0);
-            jobs.set('Secret Agent',0);
-            jobs.set('Style Influencer',0);
-            jobs.set('Writer',0);
+            jobs.set('Astronaut', 0);
+            jobs.set('Athlete', 0);
+            jobs.set('Business', 0);
+            jobs.set('Criminal', 0);
+            jobs.set('Culinary', 0);
+            jobs.set('Entertainer', 0);
+            jobs.set('Freelance', 0);
+            jobs.set('Painter', 0);
+            jobs.set('Secret Agent', 0);
+            jobs.set('Style Influencer', 0);
+            jobs.set('Writer', 0);
             //worlds
             worlds.push("Willow Creek");
             worlds.push("Oasis Springs");
             worlds.push("Newcrest");
             //likes
-            likes.set('Comedy',0);
-            likes.set('Cooking',0);
-            likes.set('Fishing',0);
-            likes.set('Fitness',0);
-            likes.set('Gardening',0);
-            likes.set('Guitar',0);
-            likes.set('Handiness',0);
-            likes.set('Mischief',0);
-            likes.set('Mixology',0);
-            likes.set('Painting',0);
-            likes.set('Piano',0);
-            likes.set('Programming',0);
-            likes.set('Rocket Science',0);
-            likes.set('Video Gaming',0);
-            likes.set('Violin',0);
-            likes.set('Writing',0);
-            likes.set('Alternative Music',0);
-            likes.set('Blues Music',0);
-            likes.set('Classical Music',0);
-            likes.set('Electronica Music',0);
-            likes.set('Hip Hop Music',0);
-            likes.set('Kids Music',0);
-            likes.set('Lullabies Music',0);
-            likes.set('Pop Music',0);
-            likes.set('Retro Music',0);
-            likes.set('Romance Music',0);
-            likes.set('S-Pop Music',0);
-            likes.set('Spooky Music',0);
-            likes.set('World Music',0);
-            likes.set('Winter Holiday Music',0);
+            likes.set('Comedy', 0);
+            likes.set('Cooking', 0);
+            likes.set('Fishing', 0);
+            likes.set('Fitness', 0);
+            likes.set('Gardening', 0);
+            likes.set('Guitar', 0);
+            likes.set('Handiness', 0);
+            likes.set('Mischief', 0);
+            likes.set('Mixology', 0);
+            likes.set('Painting', 0);
+            likes.set('Piano', 0);
+            likes.set('Programming', 0);
+            likes.set('Rocket Science', 0);
+            likes.set('Video Gaming', 0);
+            likes.set('Violin', 0);
+            likes.set('Writing', 0);
+            likes.set('Alternative Music', 0);
+            likes.set('Blues Music', 0);
+            likes.set('Classical Music', 0);
+            likes.set('Electronica Music', 0);
+            likes.set('Hip Hop Music', 0);
+            likes.set('Kids Music', 0);
+            likes.set('Lullabies Music', 0);
+            likes.set('Pop Music', 0);
+            likes.set('Retro Music', 0);
+            likes.set('Romance Music', 0);
+            likes.set('S-Pop Music', 0);
+            likes.set('Spooky Music', 0);
+            likes.set('World Music', 0);
+            likes.set('Winter Holiday Music', 0);
         }
         if (packsOwned[i] === "Get To Work") {
             occult.set("Alien", 0);
-            jobs.set("Doctor",0);
-            jobs.set("Scientist",0);
-            jobs.set("Detective",0);
-            likes.set("Easy Listening Music",0);
-            likes.set("Baking",0);
-            likes.set("Photography",0);
+            jobs.set("Doctor", 0);
+            jobs.set("Scientist", 0);
+            jobs.set("Detective", 0);
+            likes.set("Easy Listening Music", 0);
+            likes.set("Baking", 0);
+            likes.set("Photography", 0);
         }
         if (packsOwned[i] === "Get Together") {//EP
             asp.set("Leader of The Pack", 0);
             traits.set("Insider", 0);
             traits.set("Dance Machine", 0)
             worlds.push("Windenburg");
-            likes.set("DJ Mixing",0)
-            likes.set("Dancing",0);
-            likes.set("DJ Booth Music",0);
+            likes.set("DJ Mixing", 0)
+            likes.set("Dancing", 0);
+            likes.set("DJ Booth Music", 0);
         }
         if (packsOwned[i] === "City Living") {//EP
             asp.set("City Native", 0);
             traits.set("Unflirty", 0);
             worlds.push("San Myshuno");
-            likes.set("Singing",0);
+            likes.set("Singing", 0);
         }
         if (packsOwned[i] === "Cats & Dogs") { //EP
             asp.set("Friend of Animals", 0);
             traits.set("Cat Lover", 0);
             traits.set("Dog Lover", 0);
             worlds.push("Brindleton Bay");
-            likes.set("Singer-Songwriter Music",0);
+            likes.set("Singer-Songwriter Music", 0);
 
         }
         if (packsOwned[i] === "Get Famous") { //EP
@@ -265,8 +270,8 @@ function setKeys(packsOwned) {
             asp.set("Master Actor", 0);
             traits.set("Self-absorbed", 0);
             worlds.push("Del Sol Valley");
-            likes.set("Acting",0);
-            likes.set("Media Production",0);
+            likes.set("Acting", 0);
+            likes.set("Media Production", 0);
         }
         if (packsOwned[i] === "Island Living") { //EP
             asp.set("Beach Life", 0);
@@ -274,13 +279,13 @@ function setKeys(packsOwned) {
             traits.set("Child of the Ocean", 0);
             occult.set("Mermaid", 0);
             worlds.push("Sulani");
-            likes.set("Island Radio Music",0);
+            likes.set("Island Radio Music", 0);
         }
         if (packsOwned[i] === "Discover University") { //EP
             asp.set("Academic", 0);
             worlds.push("Britechester");
-            likes.set("Research & Debate",0);
-            likes.set("Robotics",0);
+            likes.set("Research & Debate", 0);
+            likes.set("Robotics", 0);
         }
         if (packsOwned[i] === "Eco Lifestyle") { //EP
             asp.set("Eco Innovator", 0);
@@ -297,18 +302,18 @@ function setKeys(packsOwned) {
             traits.set("Adventurous", 0);
             traits.set("Proper", 0);
             worlds.push("Mt. Komorebi");
-            likes.set("Rock Climbing",0);
-            likes.set("Skiing",0);
-            likes.set("Snowboarding",0);
-            likes.set("Japanese Folk Music",0);
+            likes.set("Rock Climbing", 0);
+            likes.set("Skiing", 0);
+            likes.set("Snowboarding", 0);
+            likes.set("Japanese Folk Music", 0);
         }
         if (packsOwned[i] === "Cottage Living") { //EP
             asp.set("Country Caretaker", 0);
             traits.set("Animal Enthusiast", 0);
             traits.set("Lactose Intolerant", 0);
             worlds.push("Henford-on-Bagley");
-            likes.set("Cross-stitch",0);
-            likes.set("Cottagecore Music",0);
+            likes.set("Cross-stitch", 0);
+            likes.set("Cottagecore Music", 0);
         }
     }
 }
@@ -413,48 +418,90 @@ function getVoice() {
     resultVoice = voice[x];
 }
 
+function getImages(){
+     var imgobj= images
+     console.log(imgobj.Bodybuilder.source)
+    //  if(imgobj.hasOwnProperty(resultAsp)){
+    //     aspSrc=imgobj.aspirations.resultAsp.source;
+    //     console.log(aspSrc);
+    //  }
+ }
 
 
 
 function printResults() {
+    getImages();
     resultdiv.style.display = "block";
     resultdiv.innerHTML =
         `
-<h4>Results:</h4>
-<p>Occult: ${resultOccult}</p>
-<ul class="asptrt">
-    <li>Your Aspiration: ${resultAsp}</li>
-    <li>Traits:
-        <ul>
-            <li>${resultTraits[0]}</li>
-            <li>${resultTraits[1]}</li>
-            <li>${resultTraits[2]}</li>
-        </ul>
-    </li>
-</ul>
-<div class="likedislike">
-    <ul class="likes">
-        <h4>Likes</h4>
-        <li>${resultLikes[0]}</li>
-        <li>${resultLikes[1]}</li>
-        <li>${resultLikes[2]}</li>
-    </ul>
-    <ul class="dislikes">
-        <h4>Dislikes</h4>
-        <li>${resultDislikes[0]}</li>
-        <li>${resultDislikes[1]}</li>
-        <li>${resultDislikes[2]}</li>
-    </ul>
-</div>
-<div class="otherResults">
-    <ul>
-        <li>Job: ${resultJob}</li>
-        <li>Fashion Style: ${resultFashion} </li>
-        <li>Walkstyle: ${resultWalk} </li>
-        <li>Voice Pitch: ${resultVoice}</li>
-        <li>World: ${resultWorld}</li>
-    </ul>
-</div>
+
+    <div class="container">
+        <div class="sim_name">
+
+        </div>
+        <div class="aspiration">
+           <img class="aspImg" src="${testSrc}">
+        </div>
+        <div class="traits">
+        
+        </div>
+        <div class="likes">
+        
+        </div>
+        <div class="dislikes">
+        
+        </div>
+        <div class="world">
+        
+        </div>
+        <div class="fashion">
+        
+        </div>
+        <div class="voice">
+        
+        </div>
+        <div class="occult">
+        
+        </div>
+        <div class="walk">
+        
+        </div>
+      </div>
 
 `
 }
+// <h4>Results:</h4>
+// <p>Occult: ${resultOccult}</p>
+// <ul class="asptrt">
+//     <li>Your Aspiration: ${resultAsp}</li>
+//     <li>Traits:
+//         <ul>
+//             <li>${resultTraits[0]}</li>
+//             <li>${resultTraits[1]}</li>
+//             <li>${resultTraits[2]}</li>
+//         </ul>
+//     </li>
+// </ul>
+// <div class="likedislike">
+//     <ul class="likes">
+//         <h4>Likes</h4>
+//         <li>${resultLikes[0]}</li>
+//         <li>${resultLikes[1]}</li>
+//         <li>${resultLikes[2]}</li>
+//     </ul>
+//     <ul class="dislikes">
+//         <h4>Dislikes</h4>
+//         <li>${resultDislikes[0]}</li>
+//         <li>${resultDislikes[1]}</li>
+//         <li>${resultDislikes[2]}</li>
+//     </ul>
+// </div>
+// <div class="otherResults">
+//     <ul>
+//         <li>Job: ${resultJob}</li>
+//         <li>Fashion Style: ${resultFashion} </li>
+//         <li>Walkstyle: ${resultWalk} </li>
+//         <li>Voice Pitch: ${resultVoice}</li>
+//         <li>World: ${resultWorld}</li>
+//     </ul>
+// </div>

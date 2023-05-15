@@ -2,6 +2,7 @@
 //console.log(Qs)
 var obj;
 function evaluate(choice, index) {
+    console.log(index+" and "+choice)
     obj = Qs[index][choice];
     console.log("in evaluate.js");
     //if(Qs[index].hasOwnProperty(choice)) console.log("true");

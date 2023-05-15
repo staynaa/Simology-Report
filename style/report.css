@@ -1,0 +1,38 @@
+/* html, body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(182, 87, 238);
+} */
+/* .quizbox{
+    align-items: center;
+    justify-content: center;
+} */
+.resultContainer{
+    padding: 10px;
+}
+.container {  
+    /* width: 75%; */
+    background: rgba(255,255,255,0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.25);
+display: grid; 
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+grid-template-rows: 0.8fr 1.3fr 0.9fr 1fr; 
+gap: 0px 0px; 
+grid-template-areas: 
+  "sim_name sim_name sim_name occult occult"
+  "aspiration aspiration traits traits traits"
+  "likes likes dislikes dislikes walk"
+  "world world fashion fashion voice"; 
+}
+.sim_name { grid-area: sim_name; }
+.aspiration { grid-area: aspiration; }
+.traits { grid-area: traits; }
+.likes { grid-area: likes; }
+.dislikes { grid-area: dislikes; }
+.world { grid-area: world; }
+.fashion { grid-area: fashion; }
+.voice { grid-area: voice; }
+.occult { grid-area: occult; }
+.walk { grid-area: walk; }
