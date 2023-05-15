@@ -20,10 +20,10 @@ var resultWalk;
 var resultFashion;
 var resultVoice;
 var resultWorld;
-var fname,lname;
-var aspSrc;
-var trait1Src,trait2Src,trait3Src;
-var likes1Src,likes2Src, likes3Src,dis1Src,dis2Src, dis3Src;
+var fname, lname;
+var aspSrc, aspText;
+var trait1Src, trt1Text, trait2Src, trt2Text, trait3Src, trt3Text;
+var likes1Src, likes2Src, likes3Src, dis1Src, dis2Src, dis3Src;
 var jobSrc, worldSrc, occultSrc;
 //defaults
 occult.set("Default", 3);
@@ -418,25 +418,29 @@ function getVoice() {
     resultVoice = voice[x];
 }
 
-function getImages(){
-     //console.log(images.Bodybuilder.source)
-        //console.log(resultAsp)
-        aspSrc=images[resultAsp].source; //get the result asp
-        //console.log(aspSrc);
-        trait1Src= images[resultTraits[0]].source;
-        trait2Src= images[resultTraits[1]].source;
-        trait3Src= images[resultTraits[2]].source;
-        likes1Src= images[resultLikes[0]].source;
-        likes2Src= images[resultLikes[1]].source;
-        likes3Src= images[resultLikes[2]].source;
-        dis1Src= images[resultDislikes[0]].source;
-        dis2Src= images[resultDislikes[1]].source;
-        dis3Src= images[resultDislikes[2]].source;
-        // worldSrc=images[resultWorld].source;
-        // occultSrc= images[resultOccult].source;
-        fname=firstname[Math.floor(Math.random() * firstname.length)];
-        lname=lastname[Math.floor(Math.random() * lastname.length)];
- }
+function getImages() {
+    //console.log(images.Bodybuilder.source)
+    //console.log(resultAsp)
+    aspSrc = images[resultAsp].source; //get the result asp
+    //console.log(aspSrc);
+    trait1Src = images[resultTraits[0]].source;
+    trait2Src = images[resultTraits[1]].source;
+    trait3Src = images[resultTraits[2]].source;
+    likes1Src = images[resultLikes[0]].source;
+    likes2Src = images[resultLikes[1]].source;
+    likes3Src = images[resultLikes[2]].source;
+    dis1Src = images[resultDislikes[0]].source;
+    dis2Src = images[resultDislikes[1]].source;
+    dis3Src = images[resultDislikes[2]].source;
+    worldSrc = images[resultWorld].source;
+    occultSrc = images[resultOccult].source;
+    fname = firstname[Math.floor(Math.random() * firstname.length)];
+    lname = lastname[Math.floor(Math.random() * lastname.length)];
+    aspText = images[resultAsp].text;
+    trt1Text = images[resultTraits[0]].text;
+    trt2Text = images[resultTraits[1]].text;
+    trt3Text = images[resultTraits[2]].text;
+}
 
 
 
@@ -453,20 +457,23 @@ function printResults() {
         <div class= aspLabel>
             <h3>Aspiration: ${resultAsp}</h3>
            <img class="aspImg" src="${aspSrc}">
-           </div>
-           <h4 class="aspText">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</h4>
+        </div>
+           <h4 class="aspTxt">${aspText}</h4>
         </div>
         <div class="trait1">
             <img class="trtImg" src="${trait1Src}">
             <h3>${resultTraits[0]}</h3>
+            <h4>${trt1Text}</h4>
         </div>
         <div class="trait2">
             <img class="trtImg" src="${trait2Src}">
             <h3>${resultTraits[1]}</h3>
+            <h4>${trt2Text}</h4>
         </div>
         <div class="trait3">
             <img class="trtImg" src="${trait3Src}">
             <h3>${resultTraits[2]}</h3>
+            <h4>${trt3Text}</h4>
         </div>
         <div class="likes">
             <h3>Likes</h3>
@@ -485,20 +492,69 @@ function printResults() {
             </ul>
         </div>
         <div class="world">
-        
+            <h3>You live in <em>${resultWorld}</em></h3>
+            <img class="worldImg" src="${worldSrc}">
         </div>
         <div class="fashion">
-        
+            <h3>Fashion Aesthetic: <em>${resultFashion}</em></h3>
         </div>
         <div class="voice">
-        
+            <h3>Voice Pitch: <em>${resultVoice}</em></h3>
         </div>
         <div class="occult">
-        
+            <h3>${resultOccult} Sim</h3>
+            <img class="occultImg" src="${occultSrc}">
         </div>
         <div class="walk">
-        
+            <h3>Walk Style: <em>${resultWalk}</em></h3>
         </div>
+    </div>
+
+      <div class="mobileContainer">
+        <div class="sim_name">
+            <h2>${fname} ${lname}</h2>
+        </div>
+        <div class="occult">
+            <p><em>Occult:</em> ${resultOccult} Sim</p>
+        </div>
+        <div class="world">
+            <p><em>Location:</em> ${resultWorld}</p>
+        </div>
+        <div class="walk">
+            <p><em>Walk Style:</em> ${resultWalk}</p>
+        </div>
+        <div class="voice">
+            <p><em>Voice Pitch:</em> ${resultVoice}</p>
+        </div>
+        <div class="fashion">
+            <p><em>Fashion Aesthetic:</em> ${resultFashion}</p>
+        </div>
+        <div class="aspirations">
+            <h3>Aspiration:</h3>
+           <p class="aspTxt"><em>${resultAsp}:</em> ${aspText}</p>
+        </div>
+        <div class="TraitsCont">
+            <h3>Traits:</h3>
+            <div class="trait1">
+                <p><em>${resultTraits[0]}:</em> ${trt1Text}</p>
+            </div>
+            <div class="trait2">
+                <p><em>${resultTraits[1]}:</em> ${trt2Text}</p>
+            </div>
+            <div class="trait3">
+                <p><em>${resultTraits[2]}:</em> ${trt3Text}</p>
+            </div>
+        </div>
+        <div class="likeCont">
+            <div class="likes">
+                <p>Likes: ${resultLikes[0]}, ${resultLikes[1]}, ${resultLikes[2]}</p>
+            </div>
+            <div class="dislikes">
+                <p>Dislikes: ${resultDislikes[0]}, ${resultDislikes[1]}, ${resultDislikes[2]}</p>
+            </div>
+        </div>
+
+
       </div>
 
 `

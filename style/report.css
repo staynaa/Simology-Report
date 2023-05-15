@@ -1,18 +1,38 @@
-/* html, body{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(182, 87, 238);
-} */
-/* .quizbox{
-    align-items: center;
-    justify-content: center;
-} */
 .resultContainer{
-    padding: 10px;
+    padding: 5px;
 }
+em{color: darkblue;}
+.likes{color: green;}
+.dislikes{color: red;}
+/* mobile */
+@media screen and (max-width: 786px) {
+    .mobileContainer div{
+        padding-left: 5px;
+    }
+    .container{display: none;}
+    .mobileContainer{
+        text-align: left;
+        display: block;
+        background: rgba(255,255,255,0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.25);
+    }
+    .sim_name{text-align: center;}
+    /* .likeCont{
+        display: flex;
+        width: 50%;
+        margin: auto;
+    } */
+}
+
+/* desktop/tablet */
+@media screen and (min-width:787px){
+.mobileContainer{display: none;}
+
 .likesList{list-style:none;}
 .container div{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     align-items: center;
     text-align: center;
 }
@@ -21,15 +41,16 @@
     /* height: auto; */
 }
 .container {  
-    width: 75%;
+    width: 85%;
+    margin: auto;
     background: rgba(255,255,255,0.5);
 -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
 border: 1px solid rgba(255,255,255,0.25);
 display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.7fr 1.3fr 1fr 1.3fr 0.7fr;
-    gap: 0px 0px;
+    grid-template-rows: .2fr .5fr .5fr .5fr .2fr;
+    gap: 5px 15px;
     grid-auto-flow: row;
     grid-template-areas:
       "sim_name sim_name occult"
@@ -62,4 +83,4 @@ display: grid;
   .fashion { grid-area: fashion; }
   
   .voice { grid-area: voice; }
-  
+}
