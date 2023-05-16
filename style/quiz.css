@@ -1,0 +1,81 @@
+ html{
+     color: #FAF9F6;
+ }
+ .quizbox{
+    padding: 5px;
+}
+#answersList{
+    list-style-type: none;
+    padding-left: 0; /*get rid indentation of list*/
+    margin: 0; /*get rid of top space*/
+}
+
+#answersList li{
+    margin: 0;
+}
+
+.ansText{
+    background-color: rgb(216, 216, 216);
+    color: rgb(66, 66, 66);
+    padding: 20px;
+}
+.formbox input[type="radio"][name="ansCh"] {display: none;} /*take out*/
+/* .formbox{
+    border: 2px rgb(70, 70, 70) solid;
+}  */
+
+:checked+label .ansText{
+    background-color: rgb(22, 192, 13);
+    color:rgb(235, 235, 235);
+}
+.ansText:hover{
+    background-color: rgb(101, 255, 71);
+}
+.quizbox label {
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+#skipbtn, #nextbtn{
+    cursor: pointer;
+}
+.formbox label{ border: black solid 2px;}
+
+#skipbtn, #nextbtn{
+    width: 25%;
+    padding: 10px;
+    color: black;
+    border: black solid 3px;
+    border-radius: 10px 10px 10px 10px;
+}
+.userAction{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+    /* align-items: center; */
+}
+#nextbtn{
+    margin-left: auto;
+    background-color: #81dbcc;
+    box-shadow: 5px 6px 0px 1px rgb(13, 44, 36);
+}
+#skipbtn{
+    /* float: left; */
+    background-color: #cf80c5;
+    box-shadow: 5px 6px 0px 1px rgb(53, 14, 37);
+}
+
+@media screen and (max-width:786px) {
+    html, body{
+        /* overflow: auto; */
+    }
+}
+@media screen and (min-width:787px) {
+    .quizbox{
+        text-align: left;
+    }
+    /*
+    .topAns .bottomAns{
+        display: flex;
+    } */
+}

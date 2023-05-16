@@ -1,0 +1,98 @@
+.resultContainer{
+    padding: 5px;
+}
+em{color: darkblue;}
+.likes{color: green;}
+.dislikes{color: red;}
+/* mobile */
+@media screen and (max-width: 786px) {
+    .mobileContainer div{
+        padding-left: 5px;
+    }
+    .container{display: none;}
+    .mobileContainer{
+        text-align: left;
+        display: block;
+        background: rgba(255,255,255,0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.25);
+    }
+    .sim_name{text-align: center;}
+    /* .likeCont{
+        display: flex;
+        width: 50%;
+        margin: auto;
+    } */
+}
+.saveButton{padding-top: 10px;}
+.saveButton .button {
+    /* background-color: rgb(127, 255, 110); */
+    cursor: pointer;
+    background-color: #dbdbdb;
+    width: 300px;
+    padding: 10px;
+    color: black;
+    border: black solid 3px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 6px 0px 1px rgb(52, 0, 87);
+}
+
+/* desktop/tablet */
+@media screen and (min-width:787px){
+.mobileContainer{display: none;}
+
+.likesList{list-style:none;}
+.container div{
+    /* border: 1px solid black; */
+    align-items: center;
+    text-align: center;
+}
+.container img{
+    width: 100px;
+    /* height: auto; */
+}
+.container {  
+    width: 85%;
+    margin: auto;
+    background: rgba(255,255,255,0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.25);
+display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .2fr .5fr .5fr .5fr .2fr;
+    gap: 5px 15px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "sim_name sim_name occult"
+      "aspirations aspirations aspirations"
+      "trait1 trait2 trait3"
+      "likes dislikes world"
+      "walk fashion voice";
+  }
+  
+  .aspirations { grid-area: aspirations;}
+  
+  .trait1 { grid-area: trait1; }
+  
+  .trait2 { grid-area: trait2; }
+  
+  .trait3 { grid-area: trait3; }
+  
+  .sim_name { grid-area: sim_name; }
+  
+  .occult { grid-area: occult; }
+  
+  .likes { grid-area: likes; }
+  
+  .dislikes { grid-area: dislikes; }
+  
+  .world { grid-area: world; }
+  
+  .walk { grid-area: walk; }
+  
+  .fashion { grid-area: fashion; }
+  
+  .voice { grid-area: voice; }
+}
