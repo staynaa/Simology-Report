@@ -6,7 +6,7 @@ const next = document.getElementById("nextbtn"); //next button
 const skip = document.getElementById("skipbtn");//skip button 
 
 var amountAnswered = 0;//amount of questions answered, only 20 questions should be answered
-const max = 20;//max amount of questions that the user can answer (getMax)
+const max = 10;//max amount of questions that the user can answer (getMax)
 var glbIdx;
 
 //console.log(Qs[0].answer1.traits.trait[0]);
@@ -173,7 +173,7 @@ function evalAnswer(index) { //this is where answers are calculated to put point
     //console.log(chosen);
     amountAnswered++;//increment and call display for new question
     console.log(amountAnswered + "<--- questions answered")
-    if (amountAnswered < userQs.length) displayQandAs();
+    if (amountAnswered < max) displayQandAs(); //makes sure only 10 questions are asked
     else {
         console.log("Quiz Done");
         quizdiv.style.display = "none";
