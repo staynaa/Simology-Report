@@ -46,7 +46,7 @@ style.set("Cottagecore", 0)
 style.set("Academia", 0)
 style.set("Grunge", 0)
 style.set("Beachy", 0)
-
+style.set("Nerdy",0);
 
 function addAsp(aspval) {
     if (asp.has(aspval)) {
